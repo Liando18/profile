@@ -12,11 +12,7 @@ const content = {
     btnProjects: "GitHub Projects",
     btnScholar: "Google Scholar",
     btnContact: "Contact Me",
-    stats: [
-      { label: "Research", value: "3+" },
-      { label: "Projects", value: "10+" },
-      { label: "AI Models", value: "9+" },
-    ],
+    btnDownloadCV: "Download CV",
     scroll: "SCROLL",
   },
   id: {
@@ -27,11 +23,7 @@ const content = {
     btnProjects: "Project GitHub",
     btnScholar: "Google Scholar",
     btnContact: "Hubungi Saya",
-    stats: [
-      { label: "Penelitian", value: "3+" },
-      { label: "Proyek", value: "10+" },
-      { label: "Model AI", value: "9+" },
-    ],
+    btnDownloadCV: "Download CV",
     scroll: "",
   },
 };
@@ -76,7 +68,7 @@ function ProfilePhoto({
           src="/foto-ag.jpg"
           alt="Aprilian Gevindo"
           fill
-          className="object-cover object-center"
+          className="object-cover object-[50%_20%]"
           priority
         />
         <div
@@ -308,25 +300,41 @@ export default function Hero() {
           </div>
 
           <div
-            className="flex gap-3 w-full max-w-xs animate-fade-in-up"
+            className="animate-fade-in-up"
             style={{ animationDelay: "0.5s" }}>
-            {t.stats.map((stat) => (
-              <div
-                key={stat.label}
-                className="card-cyber p-3 text-center flex-1"
-                style={{ borderColor: "var(--bg-card-border)" }}>
-                <div
-                  className="mono text-xl font-bold glow-text"
-                  style={{ color: "var(--accent-bright)" }}>
-                  {stat.value}
-                </div>
-                <div
-                  className="mono text-xs mt-0.5"
-                  style={{ color: "var(--text-secondary)" }}>
-                  {stat.label}
-                </div>
-              </div>
-            ))}
+            <a
+              href="/cv_aprilian-gevindo.pdf"
+              download
+              className="mono text-sm px-6 py-3 rounded-sm transition-all duration-300 font-medium inline-flex items-center gap-2"
+              style={{
+                background: "var(--accent-bright)",
+                color: "#020c06",
+                boxShadow: "0 0 20px var(--accent-bright)44",
+              }}
+              onMouseEnter={(e) => {
+                (e.currentTarget as HTMLElement).style.boxShadow =
+                  "0 0 30px var(--accent-bright)88";
+              }}
+              onMouseLeave={(e) => {
+                (e.currentTarget as HTMLElement).style.boxShadow =
+                  "0 0 20px var(--accent-bright)44";
+              }}>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                <polyline points="7 10 12 15 17 10" />
+                <line x1="12" y1="15" x2="12" y2="3" />
+              </svg>
+              {t.btnDownloadCV}
+            </a>
           </div>
         </div>
 
@@ -488,25 +496,43 @@ export default function Hero() {
             className="flex flex-col items-center gap-8 animate-fade-in"
             style={{ animationDelay: "0.5s" }}>
             <ProfilePhoto size={260} />
-            <div className="flex gap-3">
-              {t.stats.map((stat) => (
-                <div
-                  key={stat.label}
-                  className="card-cyber p-4 text-center w-24"
-                  style={{ borderColor: "var(--bg-card-border)" }}>
-                  <div
-                    className="mono text-2xl font-bold glow-text"
-                    style={{ color: "var(--accent-bright)" }}>
-                    {stat.value}
-                  </div>
-                  <div
-                    className="mono text-xs mt-1"
-                    style={{ color: "var(--text-secondary)" }}>
-                    {stat.label}
-                  </div>
-                </div>
-              ))}
-            </div>
+            <a
+              href="/cv_aprilian-gevindo.pdf"
+              download
+              className="mono text-sm px-6 py-3 rounded-sm transition-all duration-300 font-medium inline-flex items-center gap-2"
+              style={{
+                background: "var(--accent-bright)",
+                color: "#020c06",
+                boxShadow: "0 0 20px var(--accent-bright)44",
+              }}
+              onMouseEnter={(e) => {
+                (e.currentTarget as HTMLElement).style.boxShadow =
+                  "0 0 30px var(--accent-bright)88";
+                (e.currentTarget as HTMLElement).style.transform =
+                  "translateY(-2px)";
+              }}
+              onMouseLeave={(e) => {
+                (e.currentTarget as HTMLElement).style.boxShadow =
+                  "0 0 20px var(--accent-bright)44";
+                (e.currentTarget as HTMLElement).style.transform =
+                  "translateY(0)";
+              }}>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                <polyline points="7 10 12 15 17 10" />
+                <line x1="12" y1="15" x2="12" y2="3" />
+              </svg>
+              {t.btnDownloadCV}
+            </a>
           </div>
         </div>
       </div>
