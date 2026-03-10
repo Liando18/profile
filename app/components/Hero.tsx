@@ -7,10 +7,11 @@ const content = {
   en: {
     badge: "OPEN TO THE WORLD OF WORK & RESEARCH",
     description:
-      "Master of Informatics Engineering Graduate (M.Kom) with focus on Intelligence Systems. Researching Machine Learning, Deep Learning for Computer Vision, and AI-based Network Security. Based in Padang, West Sumatra, Indonesia.",
+      "Master of Informatics Engineering (M.Kom) graduate with focus on Intelligent Systems. Researching Machine Learning, Deep Learning for Computer Vision, and AI-based Network Security. Based in Padang, West Sumatra, Indonesia.",
     btnResearch: "View Research",
     btnProjects: "GitHub Projects",
-    btnScholar: "Google Scholar ↗",
+    btnScholar: "Google Scholar",
+    btnContact: "Contact Me",
     stats: [
       { label: "Research", value: "3+" },
       { label: "Projects", value: "10+" },
@@ -21,16 +22,17 @@ const content = {
   id: {
     badge: "TERBUKA UNTUK DUNIA PEKERJAAN & PENELITIAN",
     description:
-      "Lulusan Magister Teknik Informatika (M.Kom) dengan konsentrasi Intelligence Systems. Meneliti Machine Learning, Deep Learning untuk Computer Vision, dan Keamanan Jaringan berbasis AI. Berdomisili di Padang, Sumatera Barat, Indonesia.",
+      "Lulusan Magister Teknik Informatika (M.Kom) dengan konsentrasi Intelligent Systems. Meneliti Machine Learning, Deep Learning untuk Computer Vision, dan Keamanan Jaringan berbasis AI. Berdomisili di Padang, Sumatera Barat, Indonesia.",
     btnResearch: "Lihat Penelitian",
-    btnProjects: "Proyek GitHub",
-    btnScholar: "Google Scholar ↗",
+    btnProjects: "Project GitHub",
+    btnScholar: "Google Scholar",
+    btnContact: "Hubungi Saya",
     stats: [
       { label: "Penelitian", value: "3+" },
       { label: "Proyek", value: "10+" },
       { label: "Model AI", value: "9+" },
     ],
-    scroll: "GULIR",
+    scroll: "",
   },
 };
 
@@ -40,14 +42,14 @@ const roles = {
     "Machine Learning Engineer",
     "Full-Stack Developer",
     "Computer Vision Developer",
-    "Cybersecurity",
+    "Cybersecurity Enthusiast",
   ],
   id: [
     "Peneliti AI",
     "Machine Learning Engineer",
     "Full-Stack Developer",
     "Developer Computer Vision",
-    "Keamanan Siber",
+    "Cybersecurity Enthusiast",
   ],
 };
 
@@ -95,7 +97,7 @@ function ProfilePhoto({
             </div>
             <div
               className="mono text-xs"
-              style={{ color: "var(--text-muted)" }}>
+              style={{ color: "var(--text-secondary)" }}>
               Padang, ID
             </div>
           </div>
@@ -158,11 +160,11 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="min-h-screen flex flex-col justify-center px-6 pt-24 pb-16 max-w-6xl mx-auto relative">
+      className="min-h-screen flex flex-col justify-center px-6 pt-24 md:pb-1 pb-20 max-w-6xl mx-auto relative">
       <div className="relative z-10">
         <div className="flex flex-col items-center text-center lg:hidden">
           <div className="mb-8 animate-fade-in">
-            <ProfilePhoto size={180} showLabel={false} />
+            <ProfilePhoto size={160} showLabel={false} />
           </div>
 
           <div className="flex items-center gap-3 mb-5 animate-fade-in-up justify-center">
@@ -214,7 +216,7 @@ export default function Hero() {
           </p>
 
           <div
-            className="flex flex-wrap justify-center gap-3 mb-8 animate-fade-in-up"
+            className="flex flex-wrap justify-center gap-3 mb-4 animate-fade-in-up"
             style={{ animationDelay: "0.4s" }}>
             <a
               href="#research"
@@ -238,23 +240,27 @@ export default function Hero() {
               href="#projects"
               className="mono text-sm px-5 py-3 rounded-sm transition-all duration-300"
               style={{
-                border: "1px solid var(--accent)44",
-                color: "var(--accent-bright)",
+                border: "1px solid var(--bg-card-border)",
+                color: "var(--text-secondary)",
               }}
               onMouseEnter={(e) => {
                 (e.currentTarget as HTMLElement).style.borderColor =
                   "var(--accent-bright)";
-                (e.currentTarget as HTMLElement).style.background =
-                  "var(--accent)12";
+                (e.currentTarget as HTMLElement).style.color =
+                  "var(--accent-bright)";
               }}
               onMouseLeave={(e) => {
                 (e.currentTarget as HTMLElement).style.borderColor =
-                  "var(--accent)44";
-                (e.currentTarget as HTMLElement).style.background =
-                  "transparent";
+                  "var(--bg-card-border)";
+                (e.currentTarget as HTMLElement).style.color =
+                  "var(--text-secondary)";
               }}>
               {t.btnProjects}
             </a>
+          </div>
+          <div
+            className="flex flex-wrap justify-center gap-3 mb-8 animate-fade-in-up"
+            style={{ animationDelay: "0.45s" }}>
             <a
               href="https://scholar.google.com/citations?hl=id&user=13b1AQgAAAAJ"
               target="_blank"
@@ -266,7 +272,7 @@ export default function Hero() {
               }}
               onMouseEnter={(e) => {
                 (e.currentTarget as HTMLElement).style.borderColor =
-                  "var(--accent)44";
+                  "var(--accent-bright)";
                 (e.currentTarget as HTMLElement).style.color =
                   "var(--accent-bright)";
               }}
@@ -277,6 +283,27 @@ export default function Hero() {
                   "var(--text-secondary)";
               }}>
               {t.btnScholar}
+            </a>
+            <a
+              href="#contact"
+              className="mono text-sm px-5 py-3 rounded-sm transition-all duration-300"
+              style={{
+                border: "1px solid var(--bg-card-border)",
+                color: "var(--text-secondary)",
+              }}
+              onMouseEnter={(e) => {
+                (e.currentTarget as HTMLElement).style.borderColor =
+                  "var(--accent-bright)";
+                (e.currentTarget as HTMLElement).style.color =
+                  "var(--accent-bright)";
+              }}
+              onMouseLeave={(e) => {
+                (e.currentTarget as HTMLElement).style.borderColor =
+                  "var(--bg-card-border)";
+                (e.currentTarget as HTMLElement).style.color =
+                  "var(--text-secondary)";
+              }}>
+              {t.btnContact}
             </a>
           </div>
 
@@ -295,7 +322,7 @@ export default function Hero() {
                 </div>
                 <div
                   className="mono text-xs mt-0.5"
-                  style={{ color: "var(--text-muted)" }}>
+                  style={{ color: "var(--text-secondary)" }}>
                   {stat.label}
                 </div>
               </div>
@@ -381,22 +408,22 @@ export default function Hero() {
                 href="#projects"
                 className="mono text-sm px-6 py-3 rounded-sm transition-all duration-300"
                 style={{
-                  border: "1px solid var(--accent)44",
-                  color: "var(--accent-bright)",
+                  border: "1px solid var(--bg-card-border)",
+                  color: "var(--text-secondary)",
                 }}
                 onMouseEnter={(e) => {
                   (e.currentTarget as HTMLElement).style.borderColor =
                     "var(--accent-bright)";
-                  (e.currentTarget as HTMLElement).style.background =
-                    "var(--accent)12";
+                  (e.currentTarget as HTMLElement).style.color =
+                    "var(--accent-bright)";
                   (e.currentTarget as HTMLElement).style.transform =
                     "translateY(-2px)";
                 }}
                 onMouseLeave={(e) => {
                   (e.currentTarget as HTMLElement).style.borderColor =
-                    "var(--accent)44";
-                  (e.currentTarget as HTMLElement).style.background =
-                    "transparent";
+                    "var(--bg-card-border)";
+                  (e.currentTarget as HTMLElement).style.color =
+                    "var(--text-secondary)";
                   (e.currentTarget as HTMLElement).style.transform =
                     "translateY(0)";
                 }}>
@@ -413,7 +440,7 @@ export default function Hero() {
                 }}
                 onMouseEnter={(e) => {
                   (e.currentTarget as HTMLElement).style.borderColor =
-                    "var(--accent)44";
+                    "var(--accent-bright)";
                   (e.currentTarget as HTMLElement).style.color =
                     "var(--accent-bright)";
                   (e.currentTarget as HTMLElement).style.transform =
@@ -428,6 +455,31 @@ export default function Hero() {
                     "translateY(0)";
                 }}>
                 {t.btnScholar}
+              </a>
+              <a
+                href="#contact"
+                className="mono text-sm px-6 py-3 rounded-sm transition-all duration-300"
+                style={{
+                  border: "1px solid var(--bg-card-border)",
+                  color: "var(--text-secondary)",
+                }}
+                onMouseEnter={(e) => {
+                  (e.currentTarget as HTMLElement).style.borderColor =
+                    "var(--accent-bright)";
+                  (e.currentTarget as HTMLElement).style.color =
+                    "var(--accent-bright)";
+                  (e.currentTarget as HTMLElement).style.transform =
+                    "translateY(-2px)";
+                }}
+                onMouseLeave={(e) => {
+                  (e.currentTarget as HTMLElement).style.borderColor =
+                    "var(--bg-card-border)";
+                  (e.currentTarget as HTMLElement).style.color =
+                    "var(--text-secondary)";
+                  (e.currentTarget as HTMLElement).style.transform =
+                    "translateY(0)";
+                }}>
+                {t.btnContact}
               </a>
             </div>
           </div>
@@ -449,7 +501,7 @@ export default function Hero() {
                   </div>
                   <div
                     className="mono text-xs mt-1"
-                    style={{ color: "var(--text-muted)" }}>
+                    style={{ color: "var(--text-secondary)" }}>
                     {stat.label}
                   </div>
                 </div>
@@ -462,7 +514,9 @@ export default function Hero() {
       <div
         className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 animate-fade-in"
         style={{ animationDelay: "0.8s" }}>
-        <span className="mono text-xs" style={{ color: "var(--text-muted)" }}>
+        <span
+          className="mono text-xs"
+          style={{ color: "var(--text-secondary)" }}>
           {t.scroll}
         </span>
         <div

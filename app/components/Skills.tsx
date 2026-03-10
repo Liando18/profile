@@ -76,7 +76,7 @@ export default function Skills() {
   const t = content[lang];
 
   return (
-    <section id="skills" className="py-24 px-6 max-w-6xl mx-auto">
+    <section id="skills" className="pt-1 pb-20 px-6 max-w-6xl mx-auto">
       <div className="mb-14">
         <div className="flex items-center gap-3 mb-4">
           <span className="section-label">{t.sectionLabel}</span>

@@ -29,7 +29,7 @@ const papers = [
     },
     journal: "JTI — Jurnal Informatika Terpadu",
     date: "Februari 2026",
-    status: { en: "Under Review", id: "Sedang Ditinjau" },
+    status: { en: "Revision Stage", id: "Tahapan Revisi" },
     statusColor: "#facc15",
     tags: ["YOLO", "CNN", "Computer Vision", "Object Detection"],
     abstract: {
@@ -89,7 +89,7 @@ export default function Research() {
   const t = content[lang];
 
   return (
-    <section id="research" className="py-24 px-6 max-w-6xl mx-auto">
+    <section id="research" className="pt-20 pb-20 px-6 max-w-6xl mx-auto">
       <div className="mb-14">
         <div className="flex items-center gap-3 mb-4">
           <span className="section-label">{t.sectionLabel}</span>

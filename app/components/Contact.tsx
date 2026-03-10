@@ -74,8 +74,8 @@ export default function Contact() {
   const t = content[lang];
 
   return (
-    <section id="contact" className="py-24 px-6 max-w-6xl mx-auto">
-      <div className="mb-14">
+    <section id="contact" className="pt-1 pb-20 px-6 max-w-6xl mx-auto">
+      <div className="mb-8">
         <div className="flex items-center gap-3 mb-4">
           <span className="section-label">{t.sectionLabel}</span>
           <div
@@ -93,77 +93,75 @@ export default function Contact() {
         </h2>
       </div>
 
-      <div className="grid md:grid-cols-2 gap-12 items-start">
-        <div>
-          <p
-            className="text-base leading-relaxed mb-6"
-            style={{ color: "var(--text-secondary)" }}>
-            {t.desc}
-          </p>
-          <div
-            className="card-cyber p-5 rounded-sm mono text-sm"
-            style={{ color: "var(--text-muted)" }}>
-            <span style={{ color: "var(--accent)66" }}>const</span>
-            <span style={{ color: "var(--text-secondary)" }}> location </span>
-            <span style={{ color: "var(--accent)66" }}>=</span>
-            <span style={{ color: "var(--accent-bright)" }}>
-              {" "}
-              &quot;Padang, West Sumatra, ID&quot;
-            </span>
-            <span style={{ color: "var(--text-muted)" }}>;</span>
-          </div>
-        </div>
-
-        <div className="grid gap-3">
-          {links.map((link) => (
-            <a
-              key={link.label}
-              href={link.href}
-              target={link.href.startsWith("mailto") ? undefined : "_blank"}
-              rel="noopener noreferrer"
-              className="card-cyber p-4 rounded-sm flex items-center gap-4 group">
-              <div
-                className="w-10 h-10 rounded-sm flex items-center justify-center shrink-0"
-                style={{
-                  background: "var(--accent)12",
-                  color: "var(--accent-bright)",
-                }}>
-                {link.icon}
-              </div>
-              <div className="flex flex-col">
-                <span
-                  className="mono text-xs tracking-wide mb-0.5"
-                  style={{ color: "var(--text-muted)" }}>
-                  {link.label}
-                </span>
-                <span
-                  className="mono text-sm"
-                  style={{ color: "var(--text-primary)" }}>
-                  {link.value}
-                </span>
-              </div>
-              <div className="ml-auto opacity-0 group-hover:opacity-100 transition-opacity">
-                <svg
-                  width="14"
-                  height="14"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  style={{ color: "var(--accent-bright)" }}>
-                  <polyline points="9 18 15 12 9 6" />
-                </svg>
-              </div>
-            </a>
-          ))}
+      <div className="mb-10">
+        <p
+          className="text-base leading-relaxed mb-4"
+          style={{ color: "var(--text-secondary)", maxWidth: "640px" }}>
+          {t.desc}
+        </p>
+        <div className="card-cyber p-4 rounded-sm mono text-sm inline-block">
+          <span style={{ color: "var(--accent)88" }}>const</span>
+          <span style={{ color: "var(--text-secondary)" }}> location </span>
+          <span style={{ color: "var(--accent)88" }}>=</span>
+          <span style={{ color: "var(--accent-bright)" }}>
+            {" "}
+            &quot;Padang, West Sumatra, ID&quot;
+          </span>
+          <span style={{ color: "var(--text-secondary)" }}>;</span>
         </div>
       </div>
 
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+        {links.map((link) => (
+          <a
+            key={link.label}
+            href={link.href}
+            target={link.href.startsWith("mailto") ? undefined : "_blank"}
+            rel="noopener noreferrer"
+            className="card-cyber p-4 rounded-sm flex items-center gap-4 group">
+            <div
+              className="w-10 h-10 rounded-sm flex items-center justify-center shrink-0"
+              style={{
+                background: "var(--accent)12",
+                color: "var(--accent-bright)",
+              }}>
+              {link.icon}
+            </div>
+            <div className="flex flex-col min-w-0">
+              <span
+                className="mono text-xs tracking-wide mb-0.5"
+                style={{ color: "var(--text-secondary)" }}>
+                {link.label}
+              </span>
+              <span
+                className="mono text-sm truncate"
+                style={{ color: "var(--text-primary)" }}>
+                {link.value}
+              </span>
+            </div>
+            <div className="ml-auto opacity-0 group-hover:opacity-100 transition-opacity shrink-0">
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                style={{ color: "var(--accent-bright)" }}>
+                <polyline points="9 18 15 12 9 6" />
+              </svg>
+            </div>
+          </a>
+        ))}
+      </div>
+
       <div
-        className="mt-24 pt-8 flex flex-col md:flex-row items-center justify-between gap-4"
+        className="mt-16 pt-6 flex flex-col md:flex-row items-center justify-end gap-4"
         style={{ borderTop: "1px solid var(--bg-card-border)" }}>
         <div className="flex items-center gap-2">
-          <span className="mono text-xs" style={{ color: "var(--text-muted)" }}>
+          <span
+            className="mono text-xs"
+            style={{ color: "var(--text-secondary)" }}>
             {"<"}
           </span>
           <span
@@ -171,18 +169,22 @@ export default function Contact() {
             style={{ color: "var(--accent-bright)" }}>
             AG
           </span>
-          <span className="mono text-xs" style={{ color: "var(--text-muted)" }}>
+          <span
+            className="mono text-xs"
+            style={{ color: "var(--text-secondary)" }}>
             {"/>"}
           </span>
           <span
             className="mono text-xs ml-2"
-            style={{ color: "var(--text-muted)" }}>
+            style={{ color: "var(--text-secondary)" }}>
             Aprilian Gevindo © {new Date().getFullYear()}
           </span>
         </div>
-        <span className="mono text-xs" style={{ color: "var(--text-muted)" }}>
+        {/* <span
+          className="mono text-xs"
+          style={{ color: "var(--text-secondary)" }}>
           {t.built}
-        </span>
+        </span> */}
       </div>
     </section>
   );

@@ -43,6 +43,8 @@ function timeAgo(date: string, lang: "en" | "id") {
   return `${Math.floor(diff / 31536000)}y ago`;
 }
 
+const PER_PAGE = 6;
+
 const content = {
   en: {
     sectionLabel: "GITHUB REPOSITORIES",
@@ -50,9 +52,12 @@ const content = {
     headingAccent: "Projects",
     filterAll: "All",
     showing: (n: number, total: number) =>
-      `Showing ${n} of ${total} public repositories`,
+      `Showing ${n} of ${total} repositories`,
     error: "Could not fetch repositories. Check your connection.",
     noResult: "No repositories found for this filter.",
+    prev: "← Prev",
+    next: "Next →",
+    page: (cur: number, total: number) => `Page ${cur} of ${total}`,
   },
   id: {
     sectionLabel: "REPOSITORI GITHUB",
@@ -60,9 +65,12 @@ const content = {
     headingAccent: "Open Source",
     filterAll: "Semua",
     showing: (n: number, total: number) =>
-      `Menampilkan ${n} dari ${total} repositori publik`,
+      `Menampilkan ${n} dari ${total} repositori`,
     error: "Tidak dapat mengambil repositori. Periksa koneksi Anda.",
     noResult: "Tidak ada repositori untuk filter ini.",
+    prev: "← Sebelumnya",
+    next: "Berikutnya →",
+    page: (cur: number, total: number) => `Halaman ${cur} dari ${total}`,
   },
 };
 
@@ -73,6 +81,7 @@ export default function Projects() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [filter, setFilter] = useState<string>("ALL");
+  const [page, setPage] = useState(1);
 
   useEffect(() => {
     fetch(
@@ -92,18 +101,24 @@ export default function Projects() {
       });
   }, []);
 
+  useEffect(() => {
+    setPage(1);
+  }, [filter]);
+
   const languages = [
     "ALL",
     ...Array.from(
       new Set(repos.map((r) => r.language).filter(Boolean) as string[]),
     ),
   ];
-  const displayed =
+  const filtered =
     filter === "ALL" ? repos : repos.filter((r) => r.language === filter);
+  const totalPages = Math.ceil(filtered.length / PER_PAGE);
+  const displayed = filtered.slice((page - 1) * PER_PAGE, page * PER_PAGE);
 
   return (
-    <section id="projects" className="py-24 px-6 max-w-6xl mx-auto">
-      <div className="mb-14">
+    <section id="projects" className="pt-1 pb-20 px-6 max-w-6xl mx-auto">
+      <div className="mb-8">
         <div className="flex items-center gap-3 mb-4">
           <span className="section-label">{t.sectionLabel}</span>
           <div
@@ -143,7 +158,7 @@ export default function Projects() {
       </div>
 
       {!loading && !error && (
-        <div className="flex flex-wrap gap-2 mb-8">
+        <div className="flex flex-wrap gap-2 mb-6">
           {languages.map((lang_) => (
             <button
               key={lang_}
@@ -263,7 +278,7 @@ export default function Projects() {
                         />
                         <span
                           className="mono text-xs"
-                          style={{ color: "var(--text-muted)" }}>
+                          style={{ color: "var(--text-secondary)" }}>
                           {repo.language}
                         </span>
                       </div>
@@ -272,14 +287,14 @@ export default function Projects() {
                       <div className="flex items-center gap-1">
                         <span
                           style={{
-                            color: "var(--text-muted)",
+                            color: "var(--text-secondary)",
                             fontSize: "10px",
                           }}>
                           ★
                         </span>
                         <span
                           className="mono text-xs"
-                          style={{ color: "var(--text-muted)" }}>
+                          style={{ color: "var(--text-secondary)" }}>
                           {repo.stargazers_count}
                         </span>
                       </div>
@@ -287,27 +302,102 @@ export default function Projects() {
                   </div>
                   <span
                     className="mono text-xs"
-                    style={{ color: "var(--text-muted)" }}>
+                    style={{ color: "var(--text-secondary)" }}>
                     {timeAgo(repo.updated_at, lang)}
                   </span>
                 </div>
               </a>
             ))}
           </div>
+
           {displayed.length === 0 && (
             <div className="text-center py-12">
               <span
                 className="mono text-sm"
-                style={{ color: "var(--text-muted)" }}>
+                style={{ color: "var(--text-secondary)" }}>
                 {t.noResult}
               </span>
             </div>
           )}
-          <div
-            className="mt-6 mono text-xs"
-            style={{ color: "var(--text-muted)" }}>
-            {t.showing(displayed.length, repos.length)}
-          </div>
+
+          {totalPages > 1 && (
+            <div className="mt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+              <span
+                className="mono text-xs"
+                style={{ color: "var(--text-secondary)" }}>
+                {t.showing(displayed.length, repos.length)}
+              </span>
+              <div className="flex items-center gap-2">
+                <button
+                  onClick={() => setPage((p) => Math.max(1, p - 1))}
+                  disabled={page === 1}
+                  className="mono text-xs px-4 py-2 rounded-sm border transition-all duration-200"
+                  style={{
+                    borderColor:
+                      page === 1 ? "var(--bg-card-border)" : "var(--accent)44",
+                    color:
+                      page === 1
+                        ? "var(--text-secondary)"
+                        : "var(--accent-bright)",
+                    opacity: page === 1 ? 0.4 : 1,
+                    cursor: page === 1 ? "not-allowed" : "pointer",
+                  }}>
+                  {t.prev}
+                </button>
+
+                <div className="flex items-center gap-1">
+                  {Array.from({ length: totalPages }, (_, i) => i + 1).map(
+                    (p) => (
+                      <button
+                        key={p}
+                        onClick={() => setPage(p)}
+                        className="mono text-xs w-8 h-8 rounded-sm border transition-all duration-200"
+                        style={{
+                          background:
+                            page === p ? "var(--accent-bright)" : "transparent",
+                          color:
+                            page === p ? "#020c06" : "var(--text-secondary)",
+                          borderColor:
+                            page === p
+                              ? "var(--accent-bright)"
+                              : "var(--bg-card-border)",
+                          fontWeight: page === p ? "bold" : "normal",
+                        }}>
+                        {p}
+                      </button>
+                    ),
+                  )}
+                </div>
+
+                <button
+                  onClick={() => setPage((p) => Math.min(totalPages, p + 1))}
+                  disabled={page === totalPages}
+                  className="mono text-xs px-4 py-2 rounded-sm border transition-all duration-200"
+                  style={{
+                    borderColor:
+                      page === totalPages
+                        ? "var(--bg-card-border)"
+                        : "var(--accent)44",
+                    color:
+                      page === totalPages
+                        ? "var(--text-secondary)"
+                        : "var(--accent-bright)",
+                    opacity: page === totalPages ? 0.4 : 1,
+                    cursor: page === totalPages ? "not-allowed" : "pointer",
+                  }}>
+                  {t.next}
+                </button>
+              </div>
+            </div>
+          )}
+
+          {totalPages <= 1 && (
+            <div
+              className="mt-6 mono text-xs"
+              style={{ color: "var(--text-secondary)" }}>
+              {t.showing(displayed.length, repos.length)}
+            </div>
+          )}
         </>
       )}
     </section>
