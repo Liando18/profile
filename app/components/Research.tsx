@@ -29,8 +29,8 @@ const papers = [
     },
     journal: "JTI — Jurnal Informatika Terpadu",
     date: "Februari 2026",
-    status: { en: "Revision Stage", id: "Tahapan Revisi" },
-    statusColor: "#facc15",
+    status: { en: "Accepted", id: "Diterima" },
+    statusColor: "#00ff88",
     tags: ["YOLO", "CNN", "Computer Vision", "Object Detection"],
     abstract: {
       en: "Real-time smoker detection system combining YOLO object detection with CNN classification for intelligent surveillance applications.",
