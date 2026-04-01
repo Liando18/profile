@@ -21,7 +21,6 @@ const papers = [
       en: "Hybrid teaming strategy simulation and analysis using Naive Bayes algorithm for DDoS attack detection in computer networks.",
       id: "Simulasi dan analisis strategi hybrid teaming menggunakan algoritma Naive Bayes untuk deteksi serangan DDoS pada jaringan komputer.",
     },
-    link: null as string | null,
   },
   {
     title: {
@@ -29,17 +28,14 @@ const papers = [
       id: "Deteksi Perokok Menggunakan Algoritma YOLO dan Convolutional Neural Network (CNN)",
     },
     journal: "JTI — Jurnal Informatika Terpadu",
-    date: "Maret 2026",
-    status: { en: "Published", id: "Terbit" },
+    date: "Februari 2026",
+    status: { en: "Accepted", id: "Diterima" },
     statusColor: "#00ff88",
     tags: ["YOLO", "CNN", "Computer Vision", "Object Detection"],
     abstract: {
       en: "Real-time smoker detection system combining YOLO object detection with CNN classification for intelligent surveillance applications.",
       id: "Sistem deteksi perokok secara real-time yang menggabungkan YOLO untuk deteksi objek dengan klasifikasi CNN untuk aplikasi pengawasan cerdas.",
     },
-    link: "https://journal.nurulfikri.ac.id/index.php/JIT/article/view/1616" as
-      | string
-      | null,
   },
   {
     title: {
@@ -55,9 +51,6 @@ const papers = [
       en: "Comprehensive systematic literature review on the application of machine learning methods for detecting network anomaly attacks.",
       id: "Systematic literature review komprehensif tentang penerapan metode machine learning untuk mendeteksi serangan anomali jaringan.",
     },
-    link: "https://mail.ejournal.itn.ac.id/jati/article/view/13746" as
-      | string
-      | null,
   },
   {
     title: {
@@ -73,7 +66,6 @@ const papers = [
       en: "Implementation of Queue Tree for bandwidth management and Port Blocking for network security at Tapan Regional Hospital using Mikrotik Router OS.",
       id: "Implementasi Queue Tree untuk manajemen bandwidth dan Port Blocking untuk keamanan jaringan di RSUD Tapan menggunakan Mikrotik Router OS.",
     },
-    link: "http://repository.upiyptk.ac.id/13177/" as string | null,
   },
 ];
 
@@ -83,14 +75,12 @@ const content = {
     heading: "Research",
     headingAccent: "Papers",
     scholarLink: "View all on Google Scholar",
-    viewButton: "View",
   },
   id: {
     sectionLabel: "PUBLIKASI & PENELITIAN",
     heading: "Karya",
     headingAccent: "Ilmiah",
     scholarLink: "Lihat semua di Google Scholar",
-    viewButton: "Lihat",
   },
 };
 
@@ -143,7 +133,7 @@ export default function Research() {
                   </span>
                 </div>
               </div>
-              <div className="shrink-0 flex items-center gap-2">
+              <div className="shrink-0">
                 <span
                   className="mono text-xs px-3 py-1 rounded-sm border"
                   style={{
@@ -153,39 +143,6 @@ export default function Research() {
                   }}>
                   {paper.status[lang]}
                 </span>
-                {paper.link && (
-                  <a
-                    href={paper.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mono text-xs px-3 py-1 rounded-sm border flex items-center gap-1.5 transition-all duration-200"
-                    style={{
-                      color: "var(--accent-bright)",
-                      borderColor: "var(--accent-bright)44",
-                      background: "var(--accent-bright)12",
-                    }}
-                    onMouseEnter={(e) => {
-                      (e.currentTarget as HTMLElement).style.background =
-                        "var(--accent-bright)22";
-                    }}
-                    onMouseLeave={(e) => {
-                      (e.currentTarget as HTMLElement).style.background =
-                        "var(--accent-bright)12";
-                    }}>
-                    {t.viewButton}
-                    <svg
-                      width="10"
-                      height="10"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2">
-                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                      <polyline points="15 3 21 3 21 9" />
-                      <line x1="10" y1="14" x2="21" y2="3" />
-                    </svg>
-                  </a>
-                )}
               </div>
             </div>
             <p
