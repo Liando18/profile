@@ -25,8 +25,8 @@ const papers = [
   },
   {
     title: {
-      en: "Smoker Detection Using YOLO Algorithm and Convolutional Neural Network (CNN)",
-      id: "Deteksi Perokok Menggunakan Algoritma YOLO dan Convolutional Neural Network (CNN)",
+      en: "Smoker Detection Using the You Only Look Once (YOLO) Algorithm and Convolutional Neural Network (CNN)",
+      id: "Deteksi Perokok Menggunakan Algoritma You Only Look Once (YOLO) dan Convolutional Neural Network (CNN)",
     },
     journal: "JTI — Jurnal Informatika Terpadu",
     date: "Maret 2026",
@@ -37,7 +37,7 @@ const papers = [
       en: "Real-time smoker detection system combining YOLO object detection with CNN classification for intelligent surveillance applications.",
       id: "Sistem deteksi perokok secara real-time yang menggabungkan YOLO untuk deteksi objek dengan klasifikasi CNN untuk aplikasi pengawasan cerdas.",
     },
-    link: "https://journal.nurulfikri.ac.id/index.php/JIT/article/view/1616" as
+    link: "https://journal.nurulfikri.ac.id/index.php/JIT/article/view/2783" as
       | string
       | null,
   },
