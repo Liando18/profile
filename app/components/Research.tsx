@@ -25,11 +25,11 @@ const papers = [
   },
   {
     title: {
-      en: "Smoker Detection Using the You Only Look Once (YOLO) Algorithm and Convolutional Neural Network (CNN)",
+      en: "Smoker Detection Using You Only Look Once (YOLO) Algorithm and Convolutional Neural Network (CNN)",
       id: "Deteksi Perokok Menggunakan Algoritma You Only Look Once (YOLO) dan Convolutional Neural Network (CNN)",
     },
     journal: "JTI — Jurnal Informatika Terpadu",
-    date: "Maret 2026",
+    date: "Februari 2026",
     status: { en: "Published", id: "Terbit" },
     statusColor: "#00ff88",
     tags: ["YOLO", "CNN", "Computer Vision", "Object Detection"],
@@ -99,8 +99,8 @@ export default function Research() {
   const t = content[lang];
 
   return (
-    <section id="research" className="pt-20 pb-20 px-6 max-w-6xl mx-auto">
-      <div className="mb-14">
+    <section id="research" className="py-10 px-6 max-w-6xl mx-auto">
+      <div className="mb-8">
         <div className="flex items-center gap-3 mb-4">
           <span className="section-label">{t.sectionLabel}</span>
           <div

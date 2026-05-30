@@ -99,11 +99,7 @@ export default function Projects() {
         setError(t.error);
         setLoading(false);
       });
-  }, []);
-
-  useEffect(() => {
-    setPage(1);
-  }, [filter]);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   const languages = [
     "ALL",
@@ -117,7 +113,7 @@ export default function Projects() {
   const displayed = filtered.slice((page - 1) * PER_PAGE, page * PER_PAGE);
 
   return (
-    <section id="projects" className="pt-1 pb-20 px-6 max-w-6xl mx-auto">
+    <section id="projects" className="py-10 px-6 max-w-6xl mx-auto">
       <div className="mb-8">
         <div className="flex items-center gap-3 mb-4">
           <span className="section-label">{t.sectionLabel}</span>
@@ -162,12 +158,12 @@ export default function Projects() {
           {languages.map((lang_) => (
             <button
               key={lang_}
-              onClick={() => setFilter(lang_)}
+              onClick={() => { setFilter(lang_); setPage(1); }}
               className="mono text-xs px-3 py-1.5 rounded-sm transition-all duration-200 border"
               style={{
                 background:
                   filter === lang_ ? "var(--accent-bright)" : "transparent",
-                color: filter === lang_ ? "#020c06" : "var(--text-secondary)",
+                color: filter === lang_ ? "var(--accent-on)" : "var(--text-secondary)",
                 borderColor:
                   filter === lang_
                     ? "var(--accent-bright)"
@@ -356,7 +352,7 @@ export default function Projects() {
                           background:
                             page === p ? "var(--accent-bright)" : "transparent",
                           color:
-                            page === p ? "#020c06" : "var(--text-secondary)",
+                            page === p ? "var(--accent-on)" : "var(--text-secondary)",
                           borderColor:
                             page === p
                               ? "var(--accent-bright)"

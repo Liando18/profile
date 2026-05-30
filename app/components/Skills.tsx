@@ -76,8 +76,8 @@ export default function Skills() {
   const t = content[lang];
 
   return (
-    <section id="skills" className="pt-1 pb-20 px-6 max-w-6xl mx-auto">
-      <div className="mb-14">
+    <section id="skills" className="py-10 px-6 max-w-6xl mx-auto">
+      <div className="mb-8">
         <div className="flex items-center gap-3 mb-4">
           <span className="section-label">{t.sectionLabel}</span>
           <div
@@ -95,20 +95,20 @@ export default function Skills() {
         </h2>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {skillGroups.map((group) => (
           <div
             key={group.label.en}
-            className="card-cyber p-6 md:p-8 rounded-sm">
-            <div className="flex items-center gap-3 mb-5">
-              <span className="text-xl">{group.icon}</span>
+            className="card-cyber p-5 rounded-sm">
+            <div className="flex items-center gap-2.5 mb-4">
+              <span className="text-lg">{group.icon}</span>
               <h3
-                className="mono text-sm font-semibold tracking-wide"
+                className="mono text-xs font-semibold tracking-wide"
                 style={{ color: "var(--text-primary)" }}>
                 {group.label[lang]}
               </h3>
             </div>
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-wrap gap-1.5">
               {group.skills.map((skill) => (
                 <span key={skill} className="badge-cyber">
                   {skill}
@@ -119,22 +119,25 @@ export default function Skills() {
         ))}
       </div>
 
-      <div className="mt-10 card-cyber p-6 md:p-8 rounded-sm">
-        <h3
-          className="mono text-sm font-semibold tracking-wide mb-6"
-          style={{ color: "var(--text-primary)" }}>
-          🤝 {t.softLabel}
-        </h3>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <div className="mt-6 card-cyber p-5 rounded-sm">
+        <div className="flex items-center gap-2.5 mb-4">
+          <span className="text-lg">🤝</span>
+          <h3
+            className="mono text-xs font-semibold tracking-wide"
+            style={{ color: "var(--text-primary)" }}>
+            {t.softLabel}
+          </h3>
+        </div>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
           {softSkills.map((s) => (
             <div
               key={s.label.en}
-              className="flex flex-col items-center gap-2 p-4 rounded-sm text-center"
+              className="flex flex-col items-center gap-1.5 p-3 rounded-sm text-center"
               style={{
                 background: "var(--accent)08",
                 border: "1px solid var(--accent)22",
               }}>
-              <span className="text-2xl">{s.icon}</span>
+              <span className="text-xl">{s.icon}</span>
               <span
                 className="mono text-xs leading-tight"
                 style={{ color: "var(--text-secondary)" }}>

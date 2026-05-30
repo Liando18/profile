@@ -1,6 +1,7 @@
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
+import Education from "./components/Education";
 import Research from "./components/Research";
 import Projects from "./components/Projects";
 import Skills from "./components/Skills";
@@ -33,6 +34,14 @@ export default function Home() {
               "linear-gradient(90deg, transparent, var(--accent)22, transparent)",
           }}
         />
+        <Education />
+        <div
+          style={{
+            height: "1px",
+            background:
+              "linear-gradient(90deg, transparent, var(--accent)22, transparent)",
+          }}
+        />
         <Research />
         <div
           style={{
@@ -49,7 +58,7 @@ export default function Home() {
               "linear-gradient(90deg, transparent, var(--accent)22, transparent)",
           }}
         />
-        <Skills />
+        <Experience />
         <div
           style={{
             height: "1px",
@@ -57,7 +66,7 @@ export default function Home() {
               "linear-gradient(90deg, transparent, var(--accent)22, transparent)",
           }}
         />
-        <Experience />
+        <Skills />
         <div
           style={{
             height: "1px",

@@ -74,7 +74,7 @@ export default function Contact() {
   const t = content[lang];
 
   return (
-    <section id="contact" className="pt-1 pb-20 px-6 max-w-6xl mx-auto">
+    <section id="contact" className="py-10 px-6 max-w-6xl mx-auto">
       <div className="mb-8">
         <div className="flex items-center gap-3 mb-4">
           <span className="section-label">{t.sectionLabel}</span>

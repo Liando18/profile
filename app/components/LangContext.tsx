@@ -1,5 +1,5 @@
 "use client";
-import { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useContext, useState } from "react";
 
 type Lang = "en" | "id";
 
@@ -14,14 +14,15 @@ const LangContext = createContext<LangContextType>({
 });
 
 export function LangProvider({ children }: { children: React.ReactNode }) {
-  const [lang, setLang] = useState<Lang>("id");
-
-  useEffect(() => {
-    try {
-      const saved = localStorage.getItem("lang") as Lang | null;
-      if (saved === "en" || saved === "id") setLang(saved);
-    } catch {}
-  }, []);
+  const [lang, setLang] = useState<Lang>(() => {
+    if (typeof window !== "undefined") {
+      try {
+        const saved = localStorage.getItem("lang") as Lang | null;
+        if (saved === "en" || saved === "id") return saved;
+      } catch {}
+    }
+    return "id";
+  });
 
   const toggleLang = () => {
     const next: Lang = lang === "en" ? "id" : "en";

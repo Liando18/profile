@@ -1,34 +1,6 @@
 "use client";
 import { useLang } from "./LangContext";
 
-const education = [
-  {
-    degree: {
-      en: "Master's — Informatics Engineering",
-      id: "S2 — Magister Teknik Informatika",
-    },
-    institution: "Universitas Putra Indonesia YPTK Padang",
-    period: "Jan 2025 – Mei 2026",
-    focus: {
-      en: "Concentration: Intelligent Systems",
-      id: "Konsentrasi: Intelligent Systems",
-    },
-    current: false,
-    active: { en: "", id: "" },
-  },
-  {
-    degree: {
-      en: "Bachelor's — Informatics Engineering",
-      id: "S1 — Teknik Informatika",
-    },
-    institution: "Universitas Putra Indonesia YPTK Padang",
-    period: "Oct 2020 – Nov 2024",
-    focus: { en: "Concentration: Networking", id: "Konsentrasi: Networking" },
-    current: false,
-    active: { en: "", id: "" },
-  },
-];
-
 const experiences = [
   {
     role: {
@@ -93,18 +65,14 @@ const experiences = [
 
 const content = {
   en: {
-    sectionLabel: "EDUCATION & WORK HISTORY",
-    heading: "Education &",
+    sectionLabel: "WORK HISTORY",
+    heading: "Work",
     headingAccent: "Experience",
-    eduTitle: "EDUCATION",
-    expTitle: "WORK EXPERIENCE",
   },
   id: {
-    sectionLabel: "PENDIDIKAN & PENGALAMAN KERJA",
-    heading: "Pendidikan &",
-    headingAccent: "Pengalaman",
-    eduTitle: "PENDIDIKAN",
-    expTitle: "PENGALAMAN KERJA",
+    sectionLabel: "PENGALAMAN KERJA",
+    heading: "Pengalaman",
+    headingAccent: "Kerja",
   },
 };
 
@@ -113,7 +81,7 @@ export default function Experience() {
   const t = content[lang];
 
   return (
-    <section id="experience" className="pt-1 pb-20 px-6 max-w-6xl mx-auto">
+    <section id="experience" className="py-10 px-6 max-w-6xl mx-auto">
       <div className="mb-8">
         <div className="flex items-center gap-3 mb-4">
           <span className="section-label">{t.sectionLabel}</span>
@@ -132,64 +100,7 @@ export default function Experience() {
         </h2>
       </div>
 
-      <div className="mb-10">
-        <h3
-          className="mono text-sm font-semibold tracking-widest mb-5 pb-3"
-          style={{
-            color: "var(--accent-bright)",
-            borderBottom: "1px solid var(--accent)22",
-          }}>
-          {t.eduTitle}
-        </h3>
-        <div className="grid sm:grid-cols-2 gap-4">
-          {education.map((edu, i) => (
-            <div key={i} className="card-cyber p-5 rounded-sm relative">
-              {edu.current && (
-                <div className="absolute top-4 right-4 flex items-center gap-1.5">
-                  <div
-                    className="w-1.5 h-1.5 rounded-full pulse-glow"
-                    style={{ background: "var(--accent-bright)" }}
-                  />
-                  <span
-                    className="mono text-xs"
-                    style={{ color: "var(--accent-bright)" }}>
-                    {edu.active[lang]}
-                  </span>
-                </div>
-              )}
-              <h4
-                className="font-semibold text-sm mb-1 pr-16"
-                style={{ color: "var(--text-primary)" }}>
-                {edu.degree[lang]}
-              </h4>
-              <p
-                className="mono text-xs mb-2"
-                style={{ color: "var(--accent-bright)" }}>
-                {edu.institution}
-              </p>
-              <p
-                className="mono text-xs mb-1"
-                style={{ color: "var(--text-secondary)" }}>
-                {edu.period}
-              </p>
-              <p className="text-xs" style={{ color: "var(--text-secondary)" }}>
-                {edu.focus[lang]}
-              </p>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <div>
-        <h3
-          className="mono text-sm font-semibold tracking-widest mb-5 pb-3"
-          style={{
-            color: "var(--accent-bright)",
-            borderBottom: "1px solid var(--accent)22",
-          }}>
-          {t.expTitle}
-        </h3>
-        <div className="grid sm:grid-cols-2 gap-4">
+      <div className="grid sm:grid-cols-2 gap-4">
           {experiences.map((exp, i) => (
             <div key={i} className="card-cyber p-5 rounded-sm">
               <h4
@@ -230,7 +141,6 @@ export default function Experience() {
             </div>
           ))}
         </div>
-      </div>
     </section>
   );
 }

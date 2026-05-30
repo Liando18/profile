@@ -22,11 +22,60 @@ const interests = [
 const certs = [
   {
     title: {
+      en: "Python for Data Science & Machine Learning",
+      id: "Python for Data Science & Machine Learning",
+    },
+    org: "UniAthena · Cambridge CIQ",
+    year: "2026",
+    link: "https://drive.google.com/file/d/1svePK_YfeTE24Tb6hS1-3sEUBYPMbu0E/view",
+  },
+  {
+    title: { en: "AI+ Foundation", id: "AI+ Foundation" },
+    org: "AI CERTs",
+    year: "2026",
+    link: "https://drive.google.com/file/d/1XNkNsw9MlHJuJ3cMwKErYfuoOxv2XjDc/view",
+  },
+  {
+    title: { en: "AI Engineer", id: "AI Engineer" },
+    org: "Dicoding · DBS Foundation",
+    year: "2026",
+    link: "https://drive.google.com/drive/folders/1BeAE7KidY1h1BlH0x2ChK3ZBoUoBjnD3/view",
+  },
+  {
+    title: {
+      en: "Applied Data Science & Gen AI",
+      id: "Pelatihan Terapan Data Science & Gen AI",
+    },
+    org: "Dicoding · Microsoft",
+    year: "2026",
+    link: "https://drive.google.com/drive/folders/1D_fPUzZxPCBsG12iRwmsX9T8T9DaI9-M/view",
+  },
+  {
+    title: {
+      en: "Artificial Intelligence and Applications",
+      id: "Artificial Intelligence and Applications",
+    },
+    org: "Huawei ICT Academy",
+    year: "2026",
+    link: "https://drive.google.com/file/d/1x-NB1ftB4-dbsa0Z6by3xO2SlzECQWx1/view",
+  },
+  {
+    title: {
+      en: "openGauss Database Technology and Applications",
+      id: "openGauss Database Technology and Applications",
+    },
+    org: "Huawei ICT Academy",
+    year: "2026",
+    link: "https://drive.google.com/file/d/1HFCnNEduLpvdvHHHDNwKM2kwVSLpefsT/view",
+  },
+  {
+    title: {
       en: "Speaker — Event Management",
       id: "Pemateri Event Management",
     },
     org: "HIMANPURA Padang",
     year: "2024",
+    link: null as string | null,
   },
   {
     title: {
@@ -35,19 +84,22 @@ const certs = [
     },
     org: "HIMANPURA Padang",
     year: "2023",
+    link: "https://drive.google.com/file/d/1jSEsRQNA8LgiJq-3c2ZRW81JvEQ2yMYy/view",
   },
   {
     title: { en: "Speaker — Web Programming", id: "Pemateri Web Programming" },
     org: "Forum Studi Informatika UPI YPTK",
     year: "2022",
+    link: "https://drive.google.com/file/d/1nN3lnwdYHFXNHvQWjuk7XDk55xCXhQMR/view",
   },
   {
     title: {
-      en: "Speaker — Object Oriented Programming",
-      id: "Pemateri Object Oriented Programming",
+      en: "Speaker — Object Oriented Programming (OOP)",
+      id: "Pemateri Object Oriented Programming (OOP)",
     },
     org: "Forum Studi Informatika UPI YPTK",
     year: "2022",
+    link: "https://drive.google.com/file/d/1yJPTjF6ojcGU_g7d3KJAvOQ-fdNhMTji/view",
   },
 ];
 
@@ -59,7 +111,8 @@ const content = {
     p1: "I am a graduate of Master of Informatics Engineering at Universitas Putra Indonesia YPTK Padang, specializing in Intelligent Systems. My research focuses on applying AI and Machine Learning to solve real-world challenges in network security and computer vision.",
     p2: "Beyond research, I actively build full-stack web applications using modern frameworks like Laravel, React, and Next.js — bridging the gap between academic AI research and production-grade software development.",
     interestsLabel: "RESEARCH INTERESTS",
-    certsLabel: "CERTIFICATES & AWARDS",
+    certsLabel: "CERTIFICATES & TRAINING",
+    viewButton: "View",
   },
   id: {
     sectionLabel: "TENTANG SAYA",
@@ -68,7 +121,8 @@ const content = {
     p1: "Saya adalah lulusan Magister Teknik Informatika di Universitas Putra Indonesia YPTK Padang, dengan konsentrasi Intelligent Systems. Penelitian saya berfokus pada penerapan AI dan Machine Learning untuk menyelesaikan tantangan nyata di bidang keamanan jaringan dan computer vision.",
     p2: "Selain penelitian, saya aktif membangun aplikasi web full-stack menggunakan framework modern seperti Laravel, React, dan Next.js — menjembatani riset AI akademis dengan pengembangan software siap produksi.",
     interestsLabel: "MINAT PENELITIAN",
-    certsLabel: "SERTIFIKAT & PENGHARGAAN",
+    certsLabel: "SERTIFIKAT & PELATIHAN",
+    viewButton: "Lihat",
   },
 };
 
@@ -77,8 +131,8 @@ export default function About() {
   const t = content[lang];
 
   return (
-    <section id="about" className="py-1 px-6 max-w-6xl mx-auto">
-      <div className="mb-14">
+    <section id="about" className="py-10 px-6 max-w-6xl mx-auto">
+      <div className="mb-8">
         <div className="flex items-center gap-3 mb-4">
           <span className="section-label">{t.sectionLabel}</span>
           <div
@@ -146,7 +200,8 @@ export default function About() {
           {certs.map((cert, i) => (
             <div
               key={i}
-              className="card-cyber p-4 rounded-sm flex items-start gap-3">
+              className="card-cyber p-4 rounded-sm flex items-start gap-3"
+              style={cert.link ? { cursor: "pointer" } : undefined}>
               <div
                 className="w-8 h-8 rounded-sm flex items-center justify-center shrink-0 mt-0.5 mono text-xs font-bold"
                 style={{
@@ -156,17 +211,50 @@ export default function About() {
                 }}>
                 {cert.year.slice(2)}
               </div>
-              <div>
+              <div className="flex-1 min-w-0">
                 <p
                   className="text-sm font-medium leading-snug mb-1"
                   style={{ color: "var(--text-primary)" }}>
                   {cert.title[lang]}
                 </p>
                 <p
-                  className="mono text-xs"
+                  className="mono text-xs mb-2"
                   style={{ color: "var(--text-muted)" }}>
                   {cert.org} · {cert.year}
                 </p>
+                {cert.link && (
+                  <a
+                    href={cert.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mono text-xs px-3 py-1 rounded-sm border inline-flex items-center gap-1.5 transition-all duration-200"
+                    style={{
+                      color: "var(--accent-bright)",
+                      borderColor: "var(--accent-bright)44",
+                      background: "var(--accent-bright)12",
+                    }}
+                    onMouseEnter={(e) => {
+                      (e.currentTarget as HTMLElement).style.background =
+                        "var(--accent-bright)22";
+                    }}
+                    onMouseLeave={(e) => {
+                      (e.currentTarget as HTMLElement).style.background =
+                        "var(--accent-bright)12";
+                    }}>
+                    {t.viewButton}
+                    <svg
+                      width="10"
+                      height="10"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2">
+                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                      <polyline points="15 3 21 3 21 9" />
+                      <line x1="10" y1="14" x2="21" y2="3" />
+                    </svg>
+                  </a>
+                )}
               </div>
             </div>
           ))}

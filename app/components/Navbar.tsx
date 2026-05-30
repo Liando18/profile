@@ -1,19 +1,21 @@
 "use client";
 import { useState, useEffect } from "react";
+import Link from "next/link";
 import ThemeToggle from "./ThemeToggle";
 import { useLang } from "./LangContext";
 
 const navLabels = {
-  en: ["About", "Research", "Projects", "Skills", "Experience", "Contact"],
-  id: ["Tentang", "Penelitian", "Proyek", "Keahlian", "Pengalaman", "Kontak"],
+  en: ["About", "Education", "Research", "Projects", "Experience", "Skills", "Contact"],
+  id: ["Tentang", "Pendidikan", "Penelitian", "Proyek", "Pengalaman", "Keahlian", "Kontak"],
 };
 
 const links = [
   "#about",
+  "#education",
   "#research",
   "#projects",
-  "#skills",
   "#experience",
+  "#skills",
   "#contact",
 ];
 
@@ -42,7 +44,7 @@ export default function Navbar() {
         backdropFilter: scrolled ? "blur(12px)" : "none",
       }}>
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-        <a href="/" className="flex items-center gap-2">
+        <Link href="/" className="flex items-center gap-2">
           <span
             className="mono text-xs tracking-widest"
             style={{ color: "var(--text-muted)" }}>
@@ -58,7 +60,7 @@ export default function Navbar() {
             style={{ color: "var(--text-muted)" }}>
             {"/>"}
           </span>
-        </a>
+        </Link>
 
         <div className="hidden md:flex items-center gap-1">
           {links.map((href, i) => (

@@ -65,7 +65,7 @@ function ProfilePhoto({
           boxShadow: "0 0 40px var(--accent)22, inset 0 0 40px var(--accent)08",
         }}>
         <Image
-          src="/foto-ag.jpg"
+          src="/foto-ag-1.jpeg"
           alt="Aprilian Gevindo"
           fill
           className="object-cover object-[50%_20%]"
@@ -215,7 +215,7 @@ export default function Hero() {
               className="mono text-sm px-5 py-3 rounded-sm transition-all duration-300 font-medium"
               style={{
                 background: "var(--accent-bright)",
-                color: "#020c06",
+                color: "var(--accent-on)",
                 boxShadow: "0 0 20px var(--accent-bright)44",
               }}
               onMouseEnter={(e) => {
@@ -303,12 +303,12 @@ export default function Hero() {
             className="animate-fade-in-up"
             style={{ animationDelay: "0.5s" }}>
             <a
-              href="/cv_aprilian-gevindo.pdf"
+              href="/cv-aprilian_gevindo.pdf"
               download
               className="mono text-sm px-6 py-3 rounded-sm transition-all duration-300 font-medium inline-flex items-center gap-2"
               style={{
                 background: "var(--accent-bright)",
-                color: "#020c06",
+                color: "var(--accent-on)",
                 boxShadow: "0 0 20px var(--accent-bright)44",
               }}
               onMouseEnter={(e) => {
@@ -395,7 +395,7 @@ export default function Hero() {
                 className="mono text-sm px-6 py-3 rounded-sm transition-all duration-300 font-medium"
                 style={{
                   background: "var(--accent-bright)",
-                  color: "#020c06",
+                  color: "var(--accent-on)",
                   boxShadow: "0 0 20px var(--accent-bright)44",
                 }}
                 onMouseEnter={(e) => {
@@ -497,12 +497,12 @@ export default function Hero() {
             style={{ animationDelay: "0.5s" }}>
             <ProfilePhoto size={260} />
             <a
-              href="/cv_aprilian-gevindo.pdf"
+              href="/cv-aprilian_gevindo.pdf"
               download
               className="mono text-sm px-6 py-3 rounded-sm transition-all duration-300 font-medium inline-flex items-center gap-2"
               style={{
                 background: "var(--accent-bright)",
-                color: "#020c06",
+                color: "var(--accent-on)",
                 boxShadow: "0 0 20px var(--accent-bright)44",
               }}
               onMouseEnter={(e) => {
