@@ -37,18 +37,18 @@ const certs = [
   },
   {
     title: { en: "AI Engineer", id: "AI Engineer" },
-    org: "Dicoding · DBS Foundation",
+    org: "Dicoding Indonesia - Development Bank of Singapore (DBS) Foundation 2.0",
     year: "2026",
-    link: "https://drive.google.com/drive/folders/1BeAE7KidY1h1BlH0x2ChK3ZBoUoBjnD3/view",
+    link: "https://drive.google.com/drive/folders/1BeAE7KidY1h1BlH0x2ChK3ZBoUoBjnD3?usp=drive_link",
   },
   {
     title: {
       en: "Applied Data Science & Gen AI",
       id: "Pelatihan Terapan Data Science & Gen AI",
     },
-    org: "Dicoding · Microsoft",
+    org: "Dicoding Indonesia - Microsoft Elevate Training Center",
     year: "2026",
-    link: "https://drive.google.com/drive/folders/1D_fPUzZxPCBsG12iRwmsX9T8T9DaI9-M/view",
+    link: "https://drive.google.com/drive/folders/1D_fPUzZxPCBsG12iRwmsX9T8T9DaI9-M?usp=drive_link",
   },
   {
     title: {
