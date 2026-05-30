@@ -25,7 +25,7 @@ const certs = [
       en: "Python for Data Science & Machine Learning",
       id: "Python for Data Science & Machine Learning",
     },
-    org: "UniAthena · Cambridge CIQ",
+    org: "UniAthena - Cambridge International Qualifications (CIQ)",
     year: "2026",
     link: "https://drive.google.com/file/d/1svePK_YfeTE24Tb6hS1-3sEUBYPMbu0E/view",
   },
