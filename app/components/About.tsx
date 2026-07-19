@@ -207,7 +207,7 @@ export default function About() {
             const isClickable = Boolean(cert.link);
             const CardTag = isClickable ? "a" : "div";
             const cardProps = isClickable
-              ? { href: cert.link, target: "_blank", rel: "noopener noreferrer" }
+              ? { href: cert.link as string, target: "_blank", rel: "noopener noreferrer" }
               : {};
             
             return (
