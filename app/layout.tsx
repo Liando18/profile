@@ -10,6 +10,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://liando.vercel.app"),
   title: "Aprilian Gevindo | AI Engineer & Full-Stack Developer",
   description:
     "Portfolio of Aprilian Gevindo, M.Kom. — AI Engineer, Machine Learning researcher, and Full-Stack Web Developer based in Padang, Indonesia. Specializing in Deep Learning, Computer Vision, and Cybersecurity.",
@@ -52,10 +53,10 @@ export const metadata: Metadata = {
     siteName: "Aprilian Gevindo Portfolio",
     images: [
       {
-        url: "https://liando.vercel.app/profile.png",
-        width: 800,
-        height: 600,
-        alt: "Aprilian Gevindo Profile Image",
+        url: "/sc-app.png",
+        width: 1200,
+        height: 630,
+        alt: "Aprilian Gevindo Portfolio Web App",
       },
     ],
   },
@@ -64,7 +65,7 @@ export const metadata: Metadata = {
     title: "Aprilian Gevindo | AI Engineer & Full-Stack Developer",
     description:
       "Portfolio of Aprilian Gevindo, M.Kom. — AI Engineer, Machine Learning researcher, and Full-Stack Web Developer.",
-    images: ["https://liando.vercel.app/profile.png"],
+    images: ["/sc-app.png"],
   },
   verification: {
     google: "hG7sRVJuHWPYGIFPhWKZrQ2aBzn2UvJIv2Np6OUjkkg",
