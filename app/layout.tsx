@@ -66,6 +66,9 @@ export const metadata: Metadata = {
       "Portfolio of Aprilian Gevindo, M.Kom. — AI Engineer, Machine Learning researcher, and Full-Stack Web Developer.",
     images: ["https://liando.vercel.app/profile.png"],
   },
+  verification: {
+    google: "hG7sRVJuHWPYGIFPhWKZrQ2aBzn2UvJIv2Np6OUjkkg",
+  },
 };
 
 export default function RootLayout({
