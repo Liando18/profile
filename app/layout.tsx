@@ -83,6 +83,34 @@ export default function RootLayout({
             __html: `(function(){try{var t=localStorage.getItem('theme')||'dark';document.documentElement.setAttribute('data-theme',t);}catch(e){}})();`,
           }}
         />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              name: "Aprilian Gevindo",
+              url: "https://liando.vercel.app",
+              image: "https://liando.vercel.app/foto-ag-1.jpeg",
+              jobTitle: "AI Engineer & Full-Stack Developer",
+              alumniOf: {
+                "@type": "CollegeOrUniversity",
+                name: "Universitas Putra Indonesia YPTK Padang",
+              },
+              sameAs: [
+                "https://github.com/Liando18",
+                "https://scholar.google.com/citations?hl=id&user=13b1AQgAAAAJ"
+              ],
+              knowsAbout: [
+                "Machine Learning",
+                "Deep Learning",
+                "Computer Vision",
+                "Cybersecurity",
+                "Web Development"
+              ]
+            })
+          }}
+        />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
