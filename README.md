@@ -1,6 +1,6 @@
 <div align="center">
   <img src="public/favicon.png" alt="Logo" width="80" height="80">
-  <h1 align="center">Aprilian Gevindo — Portofolio Personal</h1>
+  <h1 align="center">Aprilian Gevindo, S.Kom., M.Kom — Portofolio Personal</h1>
   <p align="center">
     <strong>Portofolio Bertema Cyberpunk Premium yang dibangun dengan Next.js 16 (App Router)</strong>
     <br />
@@ -117,7 +117,7 @@ Anda dapat menyesuaikan warna tema utama secara langsung melalui file `app/globa
 
 ## 📬 Kontak & Sosial Media
 
-**Aprilian Gevindo**
+**Aprilian Gevindo, S.Kom., M.Kom**
 
 - 🐙 **GitHub**: [@Liando18](https://github.com/Liando18)
 - 🎓 **Google Scholar**: [Lihat Profil](https://scholar.google.com/citations?hl=id&user=13b1AQgAAAAJ)
@@ -127,5 +127,5 @@ Anda dapat menyesuaikan warna tema utama secara langsung melalui file `app/globa
 ---
 
 <div align="center">
-  <sub>Dibuat dengan ❤️ oleh Aprilian Gevindo. Jika repositori ini bermanfaat bagi Anda, jangan lupa berikan ⭐!</sub>
+  <sub>Dibuat dengan ❤️ oleh Aprilian Gevindo, S.Kom., M.Kom. Jika repositori ini bermanfaat bagi Anda, jangan lupa berikan ⭐!</sub>
 </div>
