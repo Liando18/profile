@@ -1,22 +1,24 @@
 "use client";
+import { useState } from "react";
 import { useLang } from "./LangContext";
+import { Zap, Eye, Bot, Shield, BarChart, Lock, ChevronLeft, ChevronRight } from "lucide-react";
 
 const interests = [
-  { label: { en: "Machine Learning", id: "Machine Learning" }, icon: "⚡" },
+  { label: { en: "Machine Learning", id: "Machine Learning" }, icon: <Zap size={20} className="text-accent-bright" /> },
   {
     label: {
       en: "Deep Learning / Computer Vision",
       id: "Deep Learning / Computer Vision",
     },
-    icon: "👁️",
+    icon: <Eye size={20} className="text-accent-bright" />,
   },
   {
     label: { en: "Intelligent Systems", id: "Intelligent Systems" },
-    icon: "🤖",
+    icon: <Bot size={20} className="text-accent-bright" />,
   },
-  { label: { en: "Cybersecurity", id: "Keamanan Siber" }, icon: "🛡️" },
-  { label: { en: "Data Science", id: "Data Science" }, icon: "📊" },
-  { label: { en: "Network Security", id: "Keamanan Jaringan" }, icon: "🔐" },
+  { label: { en: "Cybersecurity", id: "Keamanan Siber" }, icon: <Shield size={20} className="text-accent-bright" /> },
+  { label: { en: "Data Science", id: "Data Science" }, icon: <BarChart size={20} className="text-accent-bright" /> },
+  { label: { en: "Network Security", id: "Keamanan Jaringan" }, icon: <Lock size={20} className="text-accent-bright" /> },
 ];
 
 const certs = [
@@ -129,6 +131,10 @@ const content = {
 export default function About() {
   const { lang } = useLang();
   const t = content[lang];
+  const [certPage, setCertPage] = useState(1);
+  const CERTS_PER_PAGE = 6;
+  const totalCertPages = Math.ceil(certs.length / CERTS_PER_PAGE);
+  const displayedCerts = certs.slice((certPage - 1) * CERTS_PER_PAGE, certPage * CERTS_PER_PAGE);
 
   return (
     <section id="about" className="py-10 px-6 max-w-6xl mx-auto">
@@ -196,12 +202,15 @@ export default function About() {
           style={{ color: "var(--accent-bright)" }}>
           {t.certsLabel}
         </h3>
-        <div className="grid sm:grid-cols-2 gap-3">
-          {certs.map((cert, i) => (
+        <div className="grid sm:grid-cols-2 gap-3 mb-6">
+          {displayedCerts.map((cert, i) => (
             <div
               key={i}
-              className="card-cyber p-4 rounded-sm flex items-start gap-3"
-              style={cert.link ? { cursor: "pointer" } : undefined}>
+              className="card-cyber p-4 rounded-sm flex items-start gap-3 transition-transform duration-300 hover:-translate-y-1"
+              style={cert.link ? { cursor: "pointer" } : undefined}
+              onClick={() => {
+                if (cert.link) window.open(cert.link, "_blank", "noopener,noreferrer");
+              }}>
               <div
                 className="w-8 h-8 rounded-sm flex items-center justify-center shrink-0 mt-0.5 mono text-xs font-bold"
                 style={{
@@ -223,10 +232,7 @@ export default function About() {
                   {cert.org} · {cert.year}
                 </p>
                 {cert.link && (
-                  <a
-                    href={cert.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                  <span
                     className="mono text-xs px-3 py-1 rounded-sm border inline-flex items-center gap-1.5 transition-all duration-200"
                     style={{
                       color: "var(--accent-bright)",
@@ -253,12 +259,74 @@ export default function About() {
                       <polyline points="15 3 21 3 21 9" />
                       <line x1="10" y1="14" x2="21" y2="3" />
                     </svg>
-                  </a>
+                  </span>
                 )}
               </div>
             </div>
           ))}
         </div>
+        
+        {totalCertPages > 1 && (
+          <div className="flex items-center justify-between p-4 rounded-sm" style={{ background: "var(--accent)05", border: "1px solid var(--accent)15" }}>
+            <span className="mono text-xs" style={{ color: "var(--text-secondary)" }}>
+              PAGE <span className="font-bold" style={{ color: "var(--accent-bright)" }}>{certPage}</span> OF {totalCertPages}
+            </span>
+            <div className="flex items-center gap-2">
+              <button
+                onClick={() => setCertPage(p => Math.max(1, p - 1))}
+                disabled={certPage === 1}
+                className="w-10 h-10 flex items-center justify-center rounded-sm transition-all duration-300"
+                style={{
+                  border: "1px solid",
+                  borderColor: certPage === 1 ? "var(--bg-card-border)" : "var(--accent)44",
+                  color: certPage === 1 ? "var(--text-secondary)" : "var(--accent-bright)",
+                  background: certPage === 1 ? "transparent" : "var(--accent)12",
+                  opacity: certPage === 1 ? 0.4 : 1,
+                  cursor: certPage === 1 ? "not-allowed" : "pointer",
+                }}
+                onMouseEnter={(e) => {
+                  if (certPage !== 1) {
+                    (e.currentTarget as HTMLElement).style.background = "var(--accent)22";
+                    (e.currentTarget as HTMLElement).style.boxShadow = "0 0 10px var(--accent)44";
+                  }
+                }}
+                onMouseLeave={(e) => {
+                  if (certPage !== 1) {
+                    (e.currentTarget as HTMLElement).style.background = "var(--accent)12";
+                    (e.currentTarget as HTMLElement).style.boxShadow = "none";
+                  }
+                }}>
+                <ChevronLeft size={18} />
+              </button>
+              <button
+                onClick={() => setCertPage(p => Math.min(totalCertPages, p + 1))}
+                disabled={certPage === totalCertPages}
+                className="w-10 h-10 flex items-center justify-center rounded-sm transition-all duration-300"
+                style={{
+                  border: "1px solid",
+                  borderColor: certPage === totalCertPages ? "var(--bg-card-border)" : "var(--accent)44",
+                  color: certPage === totalCertPages ? "var(--text-secondary)" : "var(--accent-bright)",
+                  background: certPage === totalCertPages ? "transparent" : "var(--accent)12",
+                  opacity: certPage === totalCertPages ? 0.4 : 1,
+                  cursor: certPage === totalCertPages ? "not-allowed" : "pointer",
+                }}
+                onMouseEnter={(e) => {
+                  if (certPage !== totalCertPages) {
+                    (e.currentTarget as HTMLElement).style.background = "var(--accent)22";
+                    (e.currentTarget as HTMLElement).style.boxShadow = "0 0 10px var(--accent)44";
+                  }
+                }}
+                onMouseLeave={(e) => {
+                  if (certPage !== totalCertPages) {
+                    (e.currentTarget as HTMLElement).style.background = "var(--accent)12";
+                    (e.currentTarget as HTMLElement).style.boxShadow = "none";
+                  }
+                }}>
+                <ChevronRight size={18} />
+              </button>
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );

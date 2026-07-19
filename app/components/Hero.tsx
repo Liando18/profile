@@ -171,12 +171,12 @@ export default function Hero() {
             className="animate-fade-in-up"
             style={{ animationDelay: "0.1s" }}>
             <h1
-              className="text-5xl md:text-7xl font-bold leading-none tracking-tight mb-2"
+              className="text-4xl sm:text-5xl md:text-7xl font-bold leading-none tracking-tight mb-2"
               style={{ color: "var(--text-primary)" }}>
               Aprilian
             </h1>
             <h1
-              className="text-5xl md:text-7xl font-bold leading-none tracking-tight mb-6 glow-text"
+              className="text-4xl sm:text-5xl md:text-7xl font-bold leading-none tracking-tight mb-6 glow-text"
               style={{ color: "var(--accent-bright)" }}>
               Gevindo
             </h1>

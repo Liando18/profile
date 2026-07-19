@@ -4,12 +4,28 @@ import { useLang } from "./LangContext";
 const papers = [
   {
     title: {
+      en: "Exploring Public Legitimacy of Forestry Companies Through Machine Learning-Based Social Media Sentiment Analysis",
+      id: "Mengeksplorasi Legitimasi Publik terhadap Perusahaan Kehutanan Melalui Analisis Sentimen Media Sosial Berbasis Machine Learning",
+    },
+    journal: "Jurnal Ekonomi dan Bisnis Dharma Andalas",
+    date: "Juli 2026",
+    status: { en: "Accepted (LoA)", id: "LoA / Diterima" },
+    statusColor: "#f59e0b",
+    tags: ["Machine Learning", "Sentiment Analysis", "Social Media"],
+    abstract: {
+      en: "Exploring public legitimacy of forestry companies using machine learning-based sentiment analysis on social media platforms.",
+      id: "Mengeksplorasi legitimasi publik terhadap perusahaan kehutanan melalui analisis sentimen media sosial menggunakan pendekatan machine learning.",
+    },
+    link: null as string | null,
+  },
+  {
+    title: {
       en: "Simulation and Analysis of Hybrid Teaming Strategy Using Naive Bayes Algorithm in DDoS Attack Detection",
       id: "Simulasi dan Analisis Strategi Hybrid Teaming Menggunakan Algoritma Naive Bayes dalam Deteksi Serangan DDoS",
     },
     journal: "Journal of Information System Research (JOSH)",
     date: "April 2026",
-    status: { en: "Accepted", id: "Diterima" },
+    status: { en: "Published", id: "Terbit" },
     statusColor: "#00ff88",
     tags: [
       "Naive Bayes",
@@ -21,15 +37,15 @@ const papers = [
       en: "Hybrid teaming strategy simulation and analysis using Naive Bayes algorithm for DDoS attack detection in computer networks.",
       id: "Simulasi dan analisis strategi hybrid teaming menggunakan algoritma Naive Bayes untuk deteksi serangan DDoS pada jaringan komputer.",
     },
-    link: null as string | null,
+    link: "https://ejurnal.seminar-id.com/index.php/josh/article/view/9323" as string | null,
   },
   {
     title: {
       en: "Smoker Detection Using You Only Look Once (YOLO) Algorithm and Convolutional Neural Network (CNN)",
       id: "Deteksi Perokok Menggunakan Algoritma You Only Look Once (YOLO) dan Convolutional Neural Network (CNN)",
     },
-    journal: "JTI — Jurnal Informatika Terpadu",
-    date: "Februari 2026",
+    journal: "JIT — Jurnal Informatika Terpadu",
+    date: "Maret 2026",
     status: { en: "Published", id: "Terbit" },
     statusColor: "#00ff88",
     tags: ["YOLO", "CNN", "Computer Vision", "Object Detection"],
@@ -44,7 +60,7 @@ const papers = [
   {
     title: {
       en: "Applying Machine Learning to Detect Anomaly Attacks in Computer Networks: Systematic Literature Review",
-      id: "Penerapan Machine Learning untuk Mendeteksi Serangan Anomali dalam Jaringan Komputer: Systematic Literature Review",
+      id: "Penerapan Machine Learning untuk Mendeteksi Serangan Anomali dalam Jaringan Komputer : Systematic Literature Review",
     },
     journal: "JATI — Jurnal Mahasiswa Teknik Informatika",
     date: "Juni 2025",
@@ -62,9 +78,9 @@ const papers = [
   {
     title: {
       en: "Queue Tree & Port Blocking Method for Network Security at Tapan Regional Hospital Using Mikrotik",
-      id: "Penerapan Metode Queue Tree dan Port Blocking untuk Keamanan Jaringan pada RSUD Tapan Menggunakan Mikrotik",
+      id: "Penerapan Metode Queue Tree dalam Mengoptimalkan Manajemen Bandwith dan Metode Port Blocking untuk Keamanan Jaringan Pada Rumah Sakit Umum Daerah Tapan",
     },
-    journal: { en: "S1 Thesis", id: "Skripsi S1" },
+    journal: { en: "S1 Thesis", id: "Penelitian Skripsi" },
     date: "September 2024",
     status: { en: "Completed", id: "Selesai" },
     statusColor: "#60a5fa",
