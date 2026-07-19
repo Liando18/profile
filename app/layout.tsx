@@ -13,15 +13,16 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://liando.vercel.app"),
   title: "Aprilian Gevindo | AI Engineer & Full-Stack Developer",
   description:
-    "Portfolio of Aprilian Gevindo, M.Kom. — AI Engineer, Machine Learning researcher, and Full-Stack Web Developer based in Padang, Indonesia. Specializing in Deep Learning, Computer Vision, and Cybersecurity.",
+    "Portofolio Aprilian Gevindo, M.Kom. — AI Engineer, Peneliti Machine Learning, dan Full-Stack Web Developer di Padang, Indonesia. Memiliki keahlian khusus di bidang Deep Learning, Computer Vision, dan Keamanan Siber.",
   keywords: [
     "Aprilian Gevindo",
     "AI Engineer Indonesia",
-    "Machine Learning Researcher",
+    "Peneliti Machine Learning",
     "Deep Learning",
     "Computer Vision",
-    "Cybersecurity",
+    "Keamanan Siber",
     "Full-Stack Developer",
+    "Web Developer Padang",
     "React",
     "Next.js",
     "Laravel",
@@ -49,14 +50,14 @@ export const metadata: Metadata = {
     url: "https://liando.vercel.app",
     title: "Aprilian Gevindo | AI Engineer & Full-Stack Developer",
     description:
-      "Explore the portfolio, research papers, and technical projects of Aprilian Gevindo, a passionate AI Researcher and Web Developer.",
-    siteName: "Aprilian Gevindo Portfolio",
+      "Jelajahi portofolio, publikasi ilmiah, dan proyek teknis dari Aprilian Gevindo, seorang Peneliti AI dan Web Developer profesional.",
+    siteName: "Portofolio Aprilian Gevindo",
     images: [
       {
         url: "/sc-app.png",
         width: 1200,
         height: 630,
-        alt: "Aprilian Gevindo Portfolio Web App",
+        alt: "Aplikasi Web Portofolio Aprilian Gevindo",
       },
     ],
   },
@@ -64,7 +65,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Aprilian Gevindo | AI Engineer & Full-Stack Developer",
     description:
-      "Portfolio of Aprilian Gevindo, M.Kom. — AI Engineer, Machine Learning researcher, and Full-Stack Web Developer.",
+      "Portofolio Aprilian Gevindo, M.Kom. — AI Engineer, Peneliti Machine Learning, dan Full-Stack Web Developer.",
     images: ["/sc-app.png"],
   },
   verification: {
@@ -76,7 +77,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" data-theme="dark" suppressHydrationWarning>
+    <html lang="id" data-theme="dark" suppressHydrationWarning>
       <head>
         <link rel="icon" href="/favicon.png" type="image/png" sizes="32x32" />
         <script

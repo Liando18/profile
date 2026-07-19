@@ -9,7 +9,7 @@ interface LangContextType {
 }
 
 const LangContext = createContext<LangContextType>({
-  lang: "en",
+  lang: "id",
   toggleLang: () => {},
 });
 
