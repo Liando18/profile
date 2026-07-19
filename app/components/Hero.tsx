@@ -11,6 +11,7 @@ const content = {
     btnResearch: "View Research",
     btnProjects: "GitHub Projects",
     btnScholar: "Google Scholar",
+    btnLinkedIn: "LinkedIn",
     btnContact: "Contact Me",
     btnDownloadCV: "Download CV",
     scroll: "SCROLL",
@@ -22,6 +23,7 @@ const content = {
     btnResearch: "Lihat Penelitian",
     btnProjects: "Project GitHub",
     btnScholar: "Google Scholar",
+    btnLinkedIn: "LinkedIn",
     btnContact: "Hubungi Saya",
     btnDownloadCV: "Download CV",
     scroll: "",
@@ -170,15 +172,17 @@ export default function Hero() {
           <div
             className="animate-fade-in-up"
             style={{ animationDelay: "0.1s" }}>
-            <h1
-              className="text-4xl sm:text-5xl md:text-7xl font-bold leading-none tracking-tight mb-2"
-              style={{ color: "var(--text-primary)" }}>
-              Aprilian
-            </h1>
-            <h1
-              className="text-4xl sm:text-5xl md:text-7xl font-bold leading-none tracking-tight mb-6 glow-text"
-              style={{ color: "var(--accent-bright)" }}>
-              Gevindo
+            <h1 className="flex flex-col mb-6">
+              <span
+                className="text-4xl sm:text-5xl md:text-7xl font-bold leading-none tracking-tight mb-2"
+                style={{ color: "var(--text-primary)" }}>
+                Aprilian
+              </span>
+              <span
+                className="text-4xl sm:text-5xl md:text-7xl font-bold leading-none tracking-tight glow-text"
+                style={{ color: "var(--accent-bright)" }}>
+                Gevindo
+              </span>
             </h1>
           </div>
 
@@ -277,6 +281,29 @@ export default function Hero() {
               {t.btnScholar}
             </a>
             <a
+              href="https://www.linkedin.com/in/aprilian-gevindo-5766b733b"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mono text-sm px-5 py-3 rounded-sm transition-all duration-300"
+              style={{
+                border: "1px solid var(--bg-card-border)",
+                color: "var(--text-secondary)",
+              }}
+              onMouseEnter={(e) => {
+                (e.currentTarget as HTMLElement).style.borderColor =
+                  "var(--accent-bright)";
+                (e.currentTarget as HTMLElement).style.color =
+                  "var(--accent-bright)";
+              }}
+              onMouseLeave={(e) => {
+                (e.currentTarget as HTMLElement).style.borderColor =
+                  "var(--bg-card-border)";
+                (e.currentTarget as HTMLElement).style.color =
+                  "var(--text-secondary)";
+              }}>
+              {t.btnLinkedIn}
+            </a>
+            <a
               href="#contact"
               className="mono text-sm px-5 py-3 rounded-sm transition-all duration-300"
               style={{
@@ -351,15 +378,17 @@ export default function Hero() {
             <div
               className="animate-fade-in-up"
               style={{ animationDelay: "0.1s" }}>
-              <h1
-                className="text-7xl font-bold leading-none tracking-tight mb-2"
-                style={{ color: "var(--text-primary)" }}>
-                Aprilian
-              </h1>
-              <h1
-                className="text-7xl font-bold leading-none tracking-tight mb-8 glow-text"
-                style={{ color: "var(--accent-bright)" }}>
-                Gevindo
+              <h1 className="flex flex-col mb-8">
+                <span
+                  className="text-7xl font-bold leading-none tracking-tight mb-2"
+                  style={{ color: "var(--text-primary)" }}>
+                  Aprilian
+                </span>
+                <span
+                  className="text-7xl font-bold leading-none tracking-tight glow-text"
+                  style={{ color: "var(--accent-bright)" }}>
+                  Gevindo
+                </span>
               </h1>
             </div>
 
@@ -463,6 +492,33 @@ export default function Hero() {
                     "translateY(0)";
                 }}>
                 {t.btnScholar}
+              </a>
+              <a
+                href="https://www.linkedin.com/in/aprilian-gevindo-5766b733b"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mono text-sm px-6 py-3 rounded-sm transition-all duration-300"
+                style={{
+                  border: "1px solid var(--bg-card-border)",
+                  color: "var(--text-secondary)",
+                }}
+                onMouseEnter={(e) => {
+                  (e.currentTarget as HTMLElement).style.borderColor =
+                    "var(--accent-bright)";
+                  (e.currentTarget as HTMLElement).style.color =
+                    "var(--accent-bright)";
+                  (e.currentTarget as HTMLElement).style.transform =
+                    "translateY(-2px)";
+                }}
+                onMouseLeave={(e) => {
+                  (e.currentTarget as HTMLElement).style.borderColor =
+                    "var(--bg-card-border)";
+                  (e.currentTarget as HTMLElement).style.color =
+                    "var(--text-secondary)";
+                  (e.currentTarget as HTMLElement).style.transform =
+                    "translateY(0)";
+                }}>
+                {t.btnLinkedIn}
               </a>
               <a
                 href="#contact"

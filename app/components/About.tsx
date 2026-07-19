@@ -203,14 +203,18 @@ export default function About() {
           {t.certsLabel}
         </h3>
         <div className="grid sm:grid-cols-2 gap-3 mb-6">
-          {displayedCerts.map((cert, i) => (
-            <div
+          {displayedCerts.map((cert, i) => {
+            const isClickable = Boolean(cert.link);
+            const CardTag = isClickable ? "a" : "div";
+            const cardProps = isClickable
+              ? { href: cert.link, target: "_blank", rel: "noopener noreferrer" }
+              : {};
+            
+            return (
+            <CardTag
               key={i}
-              className="card-cyber p-4 rounded-sm flex items-start gap-3 transition-transform duration-300 hover:-translate-y-1"
-              style={cert.link ? { cursor: "pointer" } : undefined}
-              onClick={() => {
-                if (cert.link) window.open(cert.link, "_blank", "noopener,noreferrer");
-              }}>
+              className="card-cyber p-4 rounded-sm flex items-start gap-3 transition-transform duration-300 hover:-translate-y-1 block"
+              {...cardProps}>
               <div
                 className="w-8 h-8 rounded-sm flex items-center justify-center shrink-0 mt-0.5 mono text-xs font-bold"
                 style={{
@@ -262,8 +266,9 @@ export default function About() {
                   </span>
                 )}
               </div>
-            </div>
-          ))}
+            </CardTag>
+            );
+          })}
         </div>
         
         {totalCertPages > 1 && (

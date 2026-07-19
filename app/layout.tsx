@@ -85,6 +85,10 @@ export default function RootLayout({
             __html: `(function(){try{var t=localStorage.getItem('theme')||'dark';document.documentElement.setAttribute('data-theme',t);}catch(e){}})();`,
           }}
         />
+      </head>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        suppressHydrationWarning>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -101,7 +105,8 @@ export default function RootLayout({
               },
               sameAs: [
                 "https://github.com/Liando18",
-                "https://scholar.google.com/citations?hl=id&user=13b1AQgAAAAJ"
+                "https://scholar.google.com/citations?hl=id&user=13b1AQgAAAAJ",
+                "https://www.linkedin.com/in/aprilian-gevindo-5766b733b"
               ],
               knowsAbout: [
                 "Machine Learning",
@@ -113,10 +118,6 @@ export default function RootLayout({
             })
           }}
         />
-      </head>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-        suppressHydrationWarning>
         <LangProvider>{children}</LangProvider>
       </body>
     </html>
