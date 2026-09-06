@@ -4,60 +4,112 @@ import { useLang } from "./LangContext";
 const experiences = [
   {
     role: {
-      en: "Web Developer — Competition System",
-      id: "Web Developer — Sistem Kompetisi",
+      en: "Lecturer (Permanent Faculty)",
+      id: "Dosen Tetap",
     },
-    company: "SMA Negeri 2 Painan",
-    period: "Jan – Jun 2025",
-    stack: ["Laravel Inertia", "React", "MySQL"],
+    company: "Universitas Bhakti Kencana",
+    period: {
+      en: "Aug 2026 – Present",
+      id: "Agustus 2026 – Sekarang",
+    },
+    stack: ["Sistem Pintar", "Software Engineering", "Jaringan Komputer"],
     points: {
       en: [
-        "Built student competition management system used in real competitions.",
-        "Designed marketplace-like app with GIS-based drone delivery concept.",
+        "Permanent lecturer at Universitas Bhakti Kencana.",
+        "Teaching at the Faculty of Social Sciences in the Health Informatics study program.",
+        "Subject clusters: Intelligent Systems, Software Engineering, and Computer Networks.",
       ],
       id: [
-        "Membangun sistem manajemen kompetisi siswa yang digunakan dalam perlombaan nyata.",
-        "Merancang aplikasi berbasis marketplace dengan konsep pengiriman drone berbasis GIS.",
+        "Menjadi dosen tetap di Universitas Bhakti Kencana.",
+        "Mengajar di Fakultas Sosial pada program studi Informatika Kesehatan.",
+        "Rumpun ilmu yaitu Sistem Pintar, Software Engineering, dan Jaringan Komputer.",
       ],
     },
   },
   {
-    role: { en: "Web Developer (Freelance)", id: "Web Developer (Freelance)" },
+    role: {
+      en: "Student Competition Project",
+      id: "Proyek Kompetisi Siswa",
+    },
+    company: "SMA Negeri 2 Painan",
+    period: {
+      en: "Jan – Jun 2025",
+      id: "Januari – Juni 2025",
+    },
+    stack: ["Laravel Inertia", "React", "MySQL", "GIS"],
+    points: {
+      en: [
+        "System used for student competition contests.",
+        "Marketplace-like app concept featuring GIS-based drone delivery.",
+        "Developed using Laravel Inertia (React) and MySQL database.",
+      ],
+      id: [
+        "Sistem digunakan untuk kompetisi perlombaan siswa.",
+        "Konsep aplikasi seperti marketplace, tetapi berbasis GIS untuk pengiriman barang melalui drone.",
+        "Pengembangan menggunakan Laravel Inertia (React) serta database MySQL.",
+      ],
+    },
+  },
+  {
+    role: { en: "Web Developer", id: "Web Developer" },
     company: "AGRATA Teknik",
-    period: "Aug – Nov 2024",
+    period: {
+      en: "Aug – Nov 2024",
+      id: "Agustus – November 2024",
+    },
     stack: ["ReactJS", "ExpressJS", "MySQL"],
     points: {
       en: [
-        "Developed web application for promoting home appliance repair services.",
+        "Developed web-based application for home appliance repair services promotion.",
+        "Executed on a freelance basis.",
+        "Built using ReactJS, ExpressJS, and MySQL database.",
       ],
       id: [
-        "Mengembangkan aplikasi web untuk promosi jasa servis peralatan rumah tangga.",
+        "Mengembangkan aplikasi berbasis web untuk promosi jasa servis peralatan rumah tangga.",
+        "Pekerjaan dilakukan secara freelance.",
+        "Pengembangan menggunakan ReactJS dan ExpressJS serta database MySQL.",
       ],
     },
   },
   {
-    role: { en: "Web Developer (Freelance)", id: "Web Developer (Freelance)" },
+    role: { en: "Web Developer", id: "Web Developer" },
     company: "PT. Malayapura Spices Group",
-    period: "Feb – May 2024",
+    period: {
+      en: "Feb – May 2024",
+      id: "Februari – Mei 2024",
+    },
     stack: ["ReactJS"],
     points: {
-      en: ["Built company profile website for a spice export company."],
+      en: [
+        "Developed company profile website for a spice export enterprise.",
+        "Executed on a freelance basis.",
+        "Built using ReactJS.",
+      ],
       id: [
-        "Membangun website company profile untuk perusahaan ekspor rempah-rempah.",
+        "Mengembangkan website untuk company profile perusahaan.",
+        "Pekerjaan dilakukan secara freelance.",
+        "Pengembangan menggunakan ReactJS.",
       ],
     },
   },
   {
-    role: { en: "Web Developer (Freelance)", id: "Web Developer (Freelance)" },
+    role: { en: "Web Developer", id: "Web Developer" },
     company: "PT. Andalasia Publisher Corp",
-    period: "May – Dec 2023",
+    period: {
+      en: "May – Dec 2023",
+      id: "Mei – Desember 2023",
+    },
     stack: ["Laravel", "MySQL"],
     points: {
       en: [
-        "Developed book and article publication platform for a publishing company.",
+        "Developed website platform for publishing books and scientific articles.",
+        "Executed on a freelance basis.",
+        "Built using Laravel and MySQL database.",
       ],
       id: [
-        "Mengembangkan platform publikasi buku dan artikel untuk perusahaan penerbitan.",
+        "Mengembangkan website untuk publikasi buku dan artikel.",
+        "Pekerjaan dilakukan secara freelance.",
+        "Pengembangan menggunakan Laravel dan database MySQL.",
       ],
     },
   },
@@ -101,46 +153,46 @@ export default function Experience() {
       </div>
 
       <div className="grid sm:grid-cols-2 gap-4">
-          {experiences.map((exp, i) => (
-            <div key={i} className="card-cyber p-5 rounded-sm">
-              <h4
-                className="font-semibold text-sm leading-snug mb-1"
-                style={{ color: "var(--text-primary)" }}>
-                {exp.role[lang]}
-              </h4>
-              <div className="flex items-center gap-2 mb-2">
-                <span
-                  className="mono text-xs"
-                  style={{ color: "var(--accent-bright)" }}>
-                  {exp.company}
-                </span>
-                <span
-                  className="mono text-xs"
-                  style={{ color: "var(--text-secondary)" }}>
-                  · {exp.period}
-                </span>
-              </div>
-              <ul className="flex flex-col gap-1 mb-3">
-                {exp.points[lang].map((pt, j) => (
-                  <li
-                    key={j}
-                    className="text-xs leading-relaxed flex gap-2"
-                    style={{ color: "var(--text-secondary)" }}>
-                    <span style={{ color: "var(--accent)88" }}>›</span>
-                    {pt}
-                  </li>
-                ))}
-              </ul>
-              <div className="flex flex-wrap gap-1.5">
-                {exp.stack.map((s) => (
-                  <span key={s} className="tag-cyber">
-                    {s}
-                  </span>
-                ))}
-              </div>
+        {experiences.map((exp, i) => (
+          <div key={i} className="card-cyber p-5 rounded-sm">
+            <h4
+              className="font-semibold text-sm leading-snug mb-1"
+              style={{ color: "var(--text-primary)" }}>
+              {exp.role[lang]}
+            </h4>
+            <div className="flex items-center gap-2 mb-2">
+              <span
+                className="mono text-xs"
+                style={{ color: "var(--accent-bright)" }}>
+                {exp.company}
+              </span>
+              <span
+                className="mono text-xs"
+                style={{ color: "var(--text-secondary)" }}>
+                · {exp.period[lang]}
+              </span>
             </div>
-          ))}
-        </div>
+            <ul className="flex flex-col gap-1 mb-3">
+              {exp.points[lang].map((pt, j) => (
+                <li
+                  key={j}
+                  className="text-xs leading-relaxed flex gap-2"
+                  style={{ color: "var(--text-secondary)" }}>
+                  <span style={{ color: "var(--accent)88" }}>›</span>
+                  {pt}
+                </li>
+              ))}
+            </ul>
+            <div className="flex flex-wrap gap-1.5">
+              {exp.stack.map((s) => (
+                <span key={s} className="tag-cyber">
+                  {s}
+                </span>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
     </section>
   );
 }

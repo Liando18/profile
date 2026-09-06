@@ -4,11 +4,27 @@ import { useLang } from "./LangContext";
 const papers = [
   {
     title: {
+      en: "Design and Development of a Progressive Web App (PWA)-Based Inventory Management System Using EOQ and ROP Algorithms",
+      id: "Design and Development of a Progressive Web App (PWA)-Based Inventory Management System Using EOQ and ROP Algorithms",
+    },
+    journal: "Jurnal Media Computer Science",
+    date: { en: "October 2026", id: "Oktober 2026" },
+    status: { en: "Accepted (LoA)", id: "LoA / Diterima" },
+    statusColor: "#f59e0b",
+    tags: ["PWA", "Inventory Management", "EOQ", "ROP", "Web App"],
+    abstract: {
+      en: "Design and development of a Progressive Web App (PWA) inventory management system implementing Economic Order Quantity (EOQ) and Reorder Point (ROP) algorithms.",
+      id: "Perancangan dan pengembangan sistem manajemen inventaris berbasis Progressive Web App (PWA) menggunakan algoritma Economic Order Quantity (EOQ) dan Reorder Point (ROP).",
+    },
+    link: null as string | null,
+  },
+  {
+    title: {
       en: "Exploring Public Legitimacy of Forestry Companies Through Machine Learning-Based Social Media Sentiment Analysis",
       id: "Mengeksplorasi Legitimasi Publik terhadap Perusahaan Kehutanan Melalui Analisis Sentimen Media Sosial Berbasis Machine Learning",
     },
     journal: "Jurnal Ekonomi dan Bisnis Dharma Andalas",
-    date: "Juli 2026",
+    date: { en: "July 2026", id: "Juli 2026" },
     status: { en: "Accepted (LoA)", id: "LoA / Diterima" },
     statusColor: "#f59e0b",
     tags: ["Machine Learning", "Sentiment Analysis", "Social Media"],
@@ -23,8 +39,11 @@ const papers = [
       en: "Simulation and Analysis of Hybrid Teaming Strategy Using Naive Bayes Algorithm in DDoS Attack Detection",
       id: "Simulasi dan Analisis Strategi Hybrid Teaming Menggunakan Algoritma Naive Bayes dalam Deteksi Serangan DDoS",
     },
-    journal: "Journal of Information System Research (JOSH)",
-    date: "April 2026",
+    journal: {
+      en: "Journal of Information System Research (JOSH) | Thesis Research",
+      id: "Journal of Information System Research (JOSH) | Penelitian Tesis",
+    },
+    date: { en: "April 2026", id: "April 2026" },
     status: { en: "Published", id: "Terbit" },
     statusColor: "#00ff88",
     tags: [
@@ -44,8 +63,8 @@ const papers = [
       en: "Smoker Detection Using You Only Look Once (YOLO) Algorithm and Convolutional Neural Network (CNN)",
       id: "Deteksi Perokok Menggunakan Algoritma You Only Look Once (YOLO) dan Convolutional Neural Network (CNN)",
     },
-    journal: "JIT — Jurnal Informatika Terpadu",
-    date: "Maret 2026",
+    journal: "JIT (Jurnal Informatika Terpadu)",
+    date: { en: "March 2026", id: "Maret 2026" },
     status: { en: "Published", id: "Terbit" },
     statusColor: "#00ff88",
     tags: ["YOLO", "CNN", "Computer Vision", "Object Detection"],
@@ -53,17 +72,15 @@ const papers = [
       en: "Real-time smoker detection system combining YOLO object detection with CNN classification for intelligent surveillance applications.",
       id: "Sistem deteksi perokok secara real-time yang menggabungkan YOLO untuk deteksi objek dengan klasifikasi CNN untuk aplikasi pengawasan cerdas.",
     },
-    link: "https://journal.nurulfikri.ac.id/index.php/JIT/article/view/2783" as
-      | string
-      | null,
+    link: "https://journal.nurulfikri.ac.id/index.php/JIT/article/view/2783" as string | null,
   },
   {
     title: {
       en: "Applying Machine Learning to Detect Anomaly Attacks in Computer Networks: Systematic Literature Review",
       id: "Penerapan Machine Learning untuk Mendeteksi Serangan Anomali dalam Jaringan Komputer : Systematic Literature Review",
     },
-    journal: "JATI — Jurnal Mahasiswa Teknik Informatika",
-    date: "Juni 2025",
+    journal: "JATI (Jurnal Mahasiswa Teknik Informatika)",
+    date: { en: "June 2025", id: "Juni 2025" },
     status: { en: "Published", id: "Terbit" },
     statusColor: "#00ff88",
     tags: ["Machine Learning", "Anomaly Detection", "Network Security", "SLR"],
@@ -71,20 +88,18 @@ const papers = [
       en: "Comprehensive systematic literature review on the application of machine learning methods for detecting network anomaly attacks.",
       id: "Systematic literature review komprehensif tentang penerapan metode machine learning untuk mendeteksi serangan anomali jaringan.",
     },
-    link: "https://mail.ejournal.itn.ac.id/jati/article/view/13746" as
-      | string
-      | null,
+    link: "https://mail.ejournal.itn.ac.id/jati/article/view/13746" as string | null,
   },
   {
     title: {
-      en: "Queue Tree & Port Blocking Method for Network Security at Tapan Regional Hospital Using Mikrotik",
+      en: "Queue Tree Method for Optimizing Bandwidth Management and Port Blocking Method for Network Security at Tapan Regional General Hospital",
       id: "Penerapan Metode Queue Tree dalam Mengoptimalkan Manajemen Bandwith dan Metode Port Blocking untuk Keamanan Jaringan Pada Rumah Sakit Umum Daerah Tapan",
     },
-    journal: { en: "S1 Thesis", id: "Penelitian Skripsi" },
-    date: "September 2024",
+    journal: { en: "Undergraduate Thesis Research", id: "Penelitian Skripsi" },
+    date: { en: "September 2024", id: "September 2024" },
     status: { en: "Completed", id: "Selesai" },
     statusColor: "#60a5fa",
-    tags: ["Mikrotik", "Network Management", "Bandwidth", "Security"],
+    tags: ["Mikrotik", "Queue Tree", "Port Blocking", "Network Security"],
     abstract: {
       en: "Implementation of Queue Tree for bandwidth management and Port Blocking for network security at Tapan Regional Hospital using Mikrotik Router OS.",
       id: "Implementasi Queue Tree untuk manajemen bandwidth dan Port Blocking untuk keamanan jaringan di RSUD Tapan menggunakan Mikrotik Router OS.",
@@ -155,7 +170,7 @@ export default function Research() {
                   <span
                     className="mono text-xs"
                     style={{ color: "var(--text-muted)" }}>
-                    {paper.date}
+                    {typeof paper.date === "string" ? paper.date : paper.date[lang]}
                   </span>
                 </div>
               </div>
@@ -187,8 +202,7 @@ export default function Research() {
                     onMouseLeave={(e) => {
                       (e.currentTarget as HTMLElement).style.background =
                         "var(--accent-bright)12";
-                    }}>
-                    {t.viewButton}
+                    }}>{t.viewButton}
                     <svg
                       width="10"
                       height="10"
@@ -222,7 +236,7 @@ export default function Research() {
 
       <div className="mt-8">
         <a
-          href="https://scholar.google.com/citations?hl=id&user=13b1AQgAAAAJ"
+          href="https://scholar.google.co.id/citations?user=UVNvWHYAAAAJ&hl=id&authuser=1&oi=sra"
           target="_blank"
           rel="noopener noreferrer"
           className="mono text-xs flex items-center gap-2 transition-all duration-200"

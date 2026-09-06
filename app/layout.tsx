@@ -11,18 +11,20 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://liando.vercel.app"),
-  title: "Aprilian Gevindo | AI Engineer & Full-Stack Developer",
+  title: "Aprilian Gevindo | Dosen & AI Engineer",
   description:
-    "Portofolio Aprilian Gevindo, M.Kom. — AI Engineer, Peneliti Machine Learning, dan Full-Stack Web Developer di Padang, Indonesia. Memiliki keahlian khusus di bidang Deep Learning, Computer Vision, dan Keamanan Siber.",
+    "Portofolio Aprilian Gevindo, M.Kom. — Dosen di Universitas Bhakti Kencana, AI Engineer, dan Peneliti Machine Learning di Bandung, Indonesia. Memiliki keahlian khusus di bidang Deep Learning, Computer Vision, dan Keamanan Siber.",
   keywords: [
     "Aprilian Gevindo",
+    "Dosen Universitas Bhakti Kencana",
+    "Dosen Informatika Kesehatan",
     "AI Engineer Indonesia",
     "Peneliti Machine Learning",
     "Deep Learning",
     "Computer Vision",
     "Keamanan Siber",
     "Full-Stack Developer",
-    "Web Developer Padang",
+    "Web Developer Bandung",
     "React",
     "Next.js",
     "Laravel",
@@ -48,9 +50,9 @@ export const metadata: Metadata = {
     locale: "id_ID",
     alternateLocale: "en_US",
     url: "https://liando.vercel.app",
-    title: "Aprilian Gevindo | AI Engineer & Full-Stack Developer",
+    title: "Aprilian Gevindo | Dosen & AI Engineer",
     description:
-      "Jelajahi portofolio, publikasi ilmiah, dan proyek teknis dari Aprilian Gevindo, seorang Peneliti AI dan Web Developer profesional.",
+      "Jelajahi portofolio, publikasi ilmiah, dan proyek teknis dari Aprilian Gevindo, Dosen dan Peneliti AI profesional.",
     siteName: "Portofolio Aprilian Gevindo",
     images: [
       {
@@ -63,9 +65,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Aprilian Gevindo | AI Engineer & Full-Stack Developer",
+    title: "Aprilian Gevindo | Dosen & AI Engineer",
     description:
-      "Portofolio Aprilian Gevindo, M.Kom. — AI Engineer, Peneliti Machine Learning, dan Full-Stack Web Developer.",
+      "Portofolio Aprilian Gevindo, M.Kom. — Dosen di Universitas Bhakti Kencana, AI Engineer, dan Peneliti Machine Learning.",
     images: ["/sc-app.png"],
   },
   verification: {
@@ -98,14 +100,18 @@ export default function RootLayout({
               name: "Aprilian Gevindo",
               url: "https://liando.vercel.app",
               image: "https://liando.vercel.app/foto-ag-1.jpeg",
-              jobTitle: "AI Engineer & Full-Stack Developer",
+              jobTitle: "Dosen & AI Engineer",
+              worksFor: {
+                "@type": "CollegeOrUniversity",
+                name: "Universitas Bhakti Kencana",
+              },
               alumniOf: {
                 "@type": "CollegeOrUniversity",
                 name: "Universitas Putra Indonesia YPTK Padang",
               },
               sameAs: [
                 "https://github.com/Liando18",
-                "https://scholar.google.com/citations?hl=id&user=13b1AQgAAAAJ",
+                "https://scholar.google.co.id/citations?user=UVNvWHYAAAAJ&hl=id&authuser=1&oi=sra",
                 "https://www.linkedin.com/in/aprilian-gevindo-5766b733b"
               ],
               knowsAbout: [
@@ -113,7 +119,8 @@ export default function RootLayout({
                 "Deep Learning",
                 "Computer Vision",
                 "Cybersecurity",
-                "Web Development"
+                "Web Development",
+                "Health Informatics"
               ]
             })
           }}

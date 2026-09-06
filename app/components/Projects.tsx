@@ -99,7 +99,7 @@ export default function Projects() {
         setError(t.error);
         setLoading(false);
       });
-  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+  }, []);
 
   const languages = [
     "ALL",

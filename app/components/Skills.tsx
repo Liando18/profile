@@ -10,12 +10,12 @@ const skillGroups = [
       "Naïve Bayes",
       "Decision Tree",
       "Random Forest",
-      "K-Nearest Neighbors",
-      "Support Vector Machine",
+      "K-Nearest Neighbors (KNN)",
+      "Support Vector Machine (SVM)",
       "K-Means",
       "K-Medoid",
-      "YOLO",
-      "CNN",
+      "You Only Look Once (YOLO)",
+      "Convolutional Neural Network (CNN)",
     ],
   },
   {
@@ -24,8 +24,7 @@ const skillGroups = [
     skills: [
       "PHP — Laravel, CodeIgniter",
       "Python — Flask, Streamlit",
-      "JavaScript — React, Next.js, Express",
-      "TypeScript",
+      "JavaScript — React, Express, Next",
     ],
   },
   {
@@ -37,24 +36,48 @@ const skillGroups = [
     label: { en: "Tools & Software", id: "Alat & Software" },
     icon: <Wrench size={20} className="text-accent-bright" />,
     skills: [
-      "VS Code",
+      "Visual Studio Code & AntiGravity",
       "Jupyter Notebook",
       "MatLab",
       "RapidMiner",
       "Postman",
       "VirtualBox",
       "Draw.io",
-      "XAMPP / MAMP / LAMP",
-      "Microsoft Office",
+      "XAMPP | MAMP | LAMP",
+      "Microsoft Office (Word, Excel, PowerPoint, Fabric)",
     ],
   },
 ];
 
 const softSkills = [
-  { label: { en: "Problem Solving", id: "Pemecahan Masalah" }, icon: <Search size={20} className="text-accent-bright" /> },
-  { label: { en: "Analytical Thinking", id: "Berpikir Analitis" }, icon: <BarChart size={20} className="text-accent-bright" /> },
-  { label: { en: "Time Management", id: "Manajemen Waktu" }, icon: <Clock size={20} className="text-accent-bright" /> },
-  { label: { en: "Team Collaboration", id: "Kerja Tim" }, icon: <Users size={20} className="text-accent-bright" /> },
+  {
+    label: {
+      en: "Problem Solving & Analytical Thinking",
+      id: "Problem Solving & Berpikir Analitis",
+    },
+    icon: <Search size={20} className="text-accent-bright" />,
+  },
+  {
+    label: {
+      en: "Time Management & Responsibility",
+      id: "Manajemen Waktu & Tanggung Jawab",
+    },
+    icon: <Clock size={20} className="text-accent-bright" />,
+  },
+  {
+    label: {
+      en: "Continuous Learning Motivation",
+      id: "Motivasi Belajar Berkelanjutan",
+    },
+    icon: <Brain size={20} className="text-accent-bright" />,
+  },
+  {
+    label: {
+      en: "Independent & Team Collaboration",
+      id: "Kerja Mandiri & Kolaborasi Tim",
+    },
+    icon: <Users size={20} className="text-accent-bright" />,
+  },
 ];
 
 const content = {

@@ -8,7 +8,10 @@ const education = [
       id: "S2 — Magister Teknik Informatika",
     },
     institution: "Universitas Putra Indonesia YPTK Padang",
-    period: "Jan 2025 – Mei 2026",
+    period: {
+      en: "September 2024 – March 2026",
+      id: "September 2024 – Maret 2026",
+    },
     focus: {
       en: "Intelligent Systems · GPA: 3.71",
       id: "Intelligent Systems · IPK: 3.71",
@@ -21,7 +24,10 @@ const education = [
       id: "S1 — Teknik Informatika",
     },
     institution: "Universitas Putra Indonesia YPTK Padang",
-    period: "Oct 2020 – Nov 2024",
+    period: {
+      en: "October 2020 – September 2024",
+      id: "Oktober 2020 – September 2024",
+    },
     focus: {
       en: "Networking · GPA: 3.34",
       id: "Networking · IPK: 3.34",
@@ -100,7 +106,7 @@ export default function Education() {
                 <p
                   className="mono text-xs"
                   style={{ color: "var(--text-secondary)" }}>
-                  {edu.period}
+                  {edu.period[lang]}
                 </p>
                 <p
                   className="mono text-xs mt-1"

@@ -5,9 +5,9 @@ import { useLang } from "./LangContext";
 
 const content = {
   en: {
-    badge: "OPEN TO THE WORLD OF WORK & RESEARCH",
+    badge: "LECTURER & AI RESEARCHER",
     description:
-      "Master of Informatics Engineering (M.Kom) graduate with focus on Intelligent Systems. Researching Machine Learning, Deep Learning for Computer Vision, and AI-based Network Security. Based in Padang, West Sumatra, Indonesia.",
+      "Lecturer at Universitas Bhakti Kencana and Master of Informatics Engineering (M.Kom) graduate specializing in Intelligent Systems. Researching Machine Learning, Deep Learning for Computer Vision, and AI-based Network Security. Based in Bandung, West Java, Indonesia.",
     btnResearch: "View Research",
     btnProjects: "GitHub Projects",
     btnScholar: "Google Scholar",
@@ -17,9 +17,9 @@ const content = {
     scroll: "SCROLL",
   },
   id: {
-    badge: "TERBUKA UNTUK DUNIA PEKERJAAN & PENELITIAN",
+    badge: "DOSEN & PENELITI AI",
     description:
-      "Lulusan Magister Teknik Informatika (M.Kom) dengan konsentrasi Intelligent Systems. Meneliti Machine Learning, Deep Learning untuk Computer Vision, dan Keamanan Jaringan berbasis AI. Berdomisili di Padang, Sumatera Barat, Indonesia.",
+      "Dosen di Universitas Bhakti Kencana dan lulusan Magister Teknik Informatika (M.Kom) dengan konsentrasi Intelligent Systems. Meneliti Machine Learning, Deep Learning untuk Computer Vision, dan Keamanan Jaringan berbasis AI. Berdomisili di Bandung, Jawa Barat, Indonesia.",
     btnResearch: "Lihat Penelitian",
     btnProjects: "Project GitHub",
     btnScholar: "Google Scholar",
@@ -32,6 +32,7 @@ const content = {
 
 const roles = {
   en: [
+    "Lecturer & Educator",
     "AI Researcher",
     "Machine Learning Engineer",
     "Full-Stack Developer",
@@ -39,6 +40,7 @@ const roles = {
     "Cybersecurity Enthusiast",
   ],
   id: [
+    "Dosen & Tenaga Pengajar",
     "Peneliti AI",
     "Machine Learning Engineer",
     "Full-Stack Developer",
@@ -92,7 +94,7 @@ function ProfilePhoto({
             <div
               className="mono text-xs"
               style={{ color: "var(--text-secondary)" }}>
-              Padang, ID
+              Bandung, ID
             </div>
           </div>
         )}
@@ -258,7 +260,7 @@ export default function Hero() {
             className="flex flex-wrap justify-center gap-3 mb-8 animate-fade-in-up"
             style={{ animationDelay: "0.45s" }}>
             <a
-              href="https://scholar.google.com/citations?hl=id&user=13b1AQgAAAAJ"
+              href="https://scholar.google.co.id/citations?user=UVNvWHYAAAAJ&hl=id&authuser=1&oi=sra"
               target="_blank"
               rel="noopener noreferrer"
               className="mono text-sm px-5 py-3 rounded-sm transition-all duration-300"
@@ -467,7 +469,7 @@ export default function Hero() {
                 {t.btnProjects}
               </a>
               <a
-                href="https://scholar.google.com/citations?hl=id&user=13b1AQgAAAAJ"
+                href="https://scholar.google.co.id/citations?user=UVNvWHYAAAAJ&hl=id&authuser=1&oi=sra"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mono text-sm px-6 py-3 rounded-sm transition-all duration-300"

@@ -163,7 +163,7 @@ export default function Research() {
 
       <div className="mt-8">
         <a
-          href="https://scholar.google.com/citations?hl=id&user=13b1AQgAAAAJ"
+          href="https://scholar.google.co.id/citations?user=UVNvWHYAAAAJ&hl=id&authuser=1&oi=sra"
           target="_blank"
           rel="noopener noreferrer"
           className="mono text-xs flex items-center gap-2 transition-all duration-200"

@@ -17,7 +17,7 @@
 
 ## 🌌 Gambaran Umum
 
-Selamat datang di repositori portofolio personal saya! Ini adalah aplikasi web modern dan berperforma tinggi yang dirancang khusus untuk memamerkan riset, proyek, keahlian, dan pengalaman saya sebagai **AI Engineer & Full-Stack Developer**.
+Selamat datang di repositori portofolio personal saya! Ini adalah aplikasi web modern dan berperforma tinggi yang dirancang khusus untuk memamerkan riset, publikasi, keahlian, dan pengalaman saya sebagai **Dosen di Universitas Bhakti Kencana & AI Engineer**.
 
 Mengusung desain estetika **Cyberpunk Hijau**, portofolio ini dilengkapi dengan mode Terang/Gelap (Light/Dark Mode) yang dinamis, animasi mikro yang halus, elemen antarmuka *glassmorphism*, dan tata letak responsif yang tampak memukau di seluruh perangkat.
 
@@ -120,7 +120,7 @@ Anda dapat menyesuaikan warna tema utama secara langsung melalui file `app/globa
 **Aprilian Gevindo, S.Kom., M.Kom**
 
 - 🐙 **GitHub**: [@Liando18](https://github.com/Liando18)
-- 🎓 **Google Scholar**: [Lihat Profil](https://scholar.google.com/citations?hl=id&user=13b1AQgAAAAJ)
+- 🎓 **Google Scholar**: [Lihat Profil](https://scholar.google.co.id/citations?user=UVNvWHYAAAAJ&hl=id&authuser=1&oi=sra)
 - 📧 **Email**: liando1801@gmail.com
 - 💬 **WhatsApp**: 085835524290
 
